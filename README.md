@@ -4,6 +4,3 @@ Hi!! I am Chenshuhao(Cody) Qin 秦陈书豪 / CHIN-CHEN-SHOO-HOW /, a M.S. Compu
 
 Email: cody2363264403@gmail.com ｜ Linkedin：https://www.linkedin.com/in/chenshuhao-qin/
 
-## Resume Materials
-
-- [Alibaba Cloud Internship — Resume & LinkedIn Copy](./alibaba-cloud-internship-resume.md)
