@@ -1,0 +1,181 @@
+%-------------------------
+% Resume in Latex
+% Author : Chenshuhao Qin
+% v2026.08 — Added Alibaba Cloud (Tongyi Lab) & Blueberry AI; cut ABC; paragraph-style compressed entries; strict one page
+% Adapted for VMock Optimization
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+% Font options
+\usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Optimizing Margins
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.35in}
+
+\urlstyle{same}
+
+% Uniform, overlap-safe leading
+\linespread{1.0}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section Formatting
+\titleformat{\section}{
+  \vspace{-8pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+
+% Custom Commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-1pt}
+}
+
+% Paragraph-style entry text wrapped in a bullet-less itemize so LaTeX
+% guarantees safe baseline separation from the heading above and the next entry below
+\newcommand{\resumeParagraph}[1]{
+  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt, topsep=3pt, parsep=0pt]
+    \item{\small #1}
+  \end{itemize}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-1pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}, itemsep=2pt, topsep=2pt, parsep=0pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, itemsep=2pt, topsep=3pt, parsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADER----------
+\begin{flushleft}
+    \textbf{\Huge \scshape Chenshuhao (Cody) Qin} \\ \vspace{3pt}
+    \small
+    Los Angeles, CA $|$ (213) 922-0925 $|$
+    \href{mailto:cody2363264403@gmail.com}{\underline{cody2363264403@gmail.com}} $|$
+    \href{https://github.com/CodyQin}{\underline{github.com/CodyQin}} $|$
+    \href{https://www.linkedin.com/in/chenshuhao-qin/}{\underline{linkedin.com/in/chenshuhao-qin}}
+\end{flushleft}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Southern California (USC)}{Los Angeles, CA}
+      {Master of Science in Computer Science}{Jan. 2026 -- Dec. 2027 (Expected)}
+      \resumeItemListStart
+        \resumeItem{\textbf{Coursework}: Machine Learning, Deep Learning, Natural Language Processing, Data Structures \& Algorithms, Operating Systems, Computer Architecture, Computer Networks, Predictive Modeling}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Duke University; Duke Kunshan University}{Durham, NC / Kunshan, China}
+      {Bachelor of Science in Computer Science; B.S. in Computation and Design}{Aug. 2021 -- May. 2025}
+      \resumeItemListStart
+        \resumeItem{\textbf{Honors}: \textbf{Apple WWDC23 Swift Student Challenge Winner} (1 of 13 in China), Provincial Innovation Grant Recipient (\$3k), DKU Student Ambassador}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt, topsep=1pt, parsep=0pt]
+    \small{\item{
+     \textbf{Programming}{: Python, TypeScript/JavaScript, Java, SQL, Swift, C} \\
+     \textbf{AI \& Machine Learning}{: PyTorch, LLM Agents (AgentScope, LangChain, LlamaIndex), RAG, LoRA Fine-tuning, Ray, Hugging Face, TensorFlow, Pandas, NumPy} \\
+     \textbf{Infrastructure \& Tools}{: Kubernetes, Docker, MySQL, PostgreSQL, Redis, FastAPI, React, Flask, CI/CD, Git, Linux, AWS}
+    }}
+ \end{itemize}
+
+%-----------WORK EXPERIENCE-----------
+\section{Work Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Alibaba Cloud}{Hangzhou, China}
+      {AI Engineer Intern}{Jun. 2026 -- Aug. 2026}
+      \resumeItemListStart
+        \resumeItem{Collaborated with Alibaba's \textbf{Tongyi Lab} to productize \textbf{Data-Juicer Agents} into natural-language-driven multimodal data-processing workflows for the broader \textbf{Qwen} ecosystem, replacing script-heavy pipelines on the Apsara Data Lake platform.}
+        \resumeItem{Built an agent-to-\textbf{Ray} distributed execution pipeline over private-cloud object storage and Kubernetes --- \textbf{2,793 records, 16 operators, $\sim$5 minutes} --- and landed the core capability upstream through a merged PR.}
+        \resumeItem{Designed a three-layer context-control architecture (tool-output compaction, memory compression, hard token budgets) cutting single-tool context payloads by \textbf{82\%} and enabling stable multi-turn agents on 30k-token models.}
+        \resumeItem{Shipped a \textbf{React / FastAPI / MySQL} agent workspace (persistent sessions, execution tracing, rollback, multi-instance isolation; 4 image releases) and contributed \textbf{5 merged PRs} to the 7k$\star$ Data-Juicer open-source ecosystem.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Blueberry AI}{Burlingame, CA (Remote)}
+      {AI Engineer Intern}{Nov. 2025 -- Dec. 2025}
+      \resumeParagraph{Built a \textbf{Milvus + MySQL} feature-extraction and auto-tagging pipeline batch-indexing \textbf{200K+ images} for landmark / IP / SKU retrieval; benchmarked \textbf{DINOv3, Qwen-VL, and BGE-VL} under a unified recall / precision / latency framework for private deployment; delivered a YOLO + vector-search + Gradio retrieval POC validated for commercial use.}
+
+    \resumeSubheading
+      {Tsinghua Sichuan Energy Internet Research Institute}{Chengdu, China}
+      {Algorithm Engineer Intern}{Sep. 2025 -- Oct. 2025}
+      \resumeParagraph{Engineered a \textbf{DeepLabV3+} semantic-segmentation model for microgrid fault diagnosis reaching \textbf{92\% accuracy} across complex field scenarios; owned the full data lifecycle of \textbf{500+ annotated images} from preprocessing to deployment, anchoring winning bids for major energy-infrastructure projects.}
+
+    \resumeSubheading
+      {Leiting Games (G-bits)}{Shenzhen, China}
+      {AI R\&D Intern (AIGC \& Automation)}{May. 2025 -- Aug. 2025}
+      \resumeParagraph{Fine-tuned \textbf{SDXL / Flux LoRA} models on \textbf{Kohya}, shipping 30+ ad assets (80\% adoption) that drove \textbf{117K+ installs} and \textbf{¥24.6M billings (196\% ROI)}; led a 5-person team scaling creative output \textbf{3$\times$} with 15--20\% higher material ROI; built a \textbf{98.85\%-accurate} RPA monitor catching 1,000+ private-server violations (2025 Best Practice).}
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+  \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {\textbf{ChatDKU --- RAG Campus Q\&A Assistant} $|$ \emph{Python, LlamaIndex, LangChain, Redis}}{Jul. 2024 -- May. 2025}
+      \resumeParagraph{Co-founded a university-adopted \textbf{RAG-agent} Q\&A system indexing \textbf{12,000+ webpages} over a privately deployed LLM; implemented \textbf{Hybrid Search (BM25 + vectors)}, \textbf{HyDE}, and multi-level \textbf{Redis} caching, attaining \textbf{ROUGE 81.1\% / BLEU 60.2\%}; authored the design as a DKU Signature Work.}
+
+  \resumeSubHeadingListEnd
+
+%-----------PUBLICATIONS-----------
+\section{Publications}
+ \begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt, topsep=1pt, parsep=0pt]
+    \small{\item{
+     \emph{Privacy-Preserving Room Occupancy Estimation Using Federated Analytics of BLE Packets} --- \textbf{ACM SenSys 2024} (Demo Track, second author), pp. 889--890; \textbf{95\%} real-world accuracy via federated learning over BLE.\vspace{-3pt}
+    }}
+ \end{itemize}
+
+\end{document}
