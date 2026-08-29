@@ -39,7 +39,7 @@
 \urlstyle{same}
 
 % Uniform, overlap-safe leading
-\linespread{1.0}
+\linespread{0.98}
 
 \raggedbottom
 \raggedright
@@ -68,7 +68,7 @@
 % Paragraph-style entry text wrapped in a bullet-less itemize so LaTeX
 % guarantees safe baseline separation from the heading above and the next entry below
 \newcommand{\resumeParagraph}[1]{
-  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt, topsep=3pt, parsep=0pt]
+  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt, topsep=2pt, parsep=0pt]
     \item{\small #1}
   \end{itemize}
 }
@@ -84,7 +84,7 @@
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}, itemsep=2pt, topsep=2pt, parsep=0pt]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, itemsep=2pt, topsep=3pt, parsep=0pt]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, itemsep=1pt, topsep=2pt, parsep=0pt]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
 
 %-------------------------------------------
@@ -123,9 +123,10 @@
 \section{Skills}
  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt, topsep=1pt, parsep=0pt]
     \small{\item{
-     \textbf{Programming}{: Python, TypeScript/JavaScript, Java, SQL, Swift, C} \\
-     \textbf{AI \& Machine Learning}{: PyTorch, LLM Agents (AgentScope, LangChain, LlamaIndex), RAG, LoRA Fine-tuning, Ray, Hugging Face, TensorFlow, Pandas, NumPy} \\
-     \textbf{Infrastructure \& Tools}{: Kubernetes, Docker, MySQL, PostgreSQL, Redis, FastAPI, React, Flask, CI/CD, Git, Linux, AWS}
+     \textbf{Programming}{: Python, TypeScript/JavaScript, Java, SQL (MySQL, PostgreSQL), Swift, C} \\
+     \textbf{AI \& Machine Learning}{: PyTorch, TensorFlow, LoRA Fine-tuning, Prompt Engineering, Hugging Face, Pandas, NumPy} \\
+     \textbf{LLM \& Agents}{: LLM Agents (AgentScope, LangChain, LlamaIndex), Retrieval-Augmented Generation (RAG), Model Serving (vLLM), Embeddings \& Vector Search (Milvus), Ray} \\
+     \textbf{Infrastructure \& Tools}{: Kubernetes, Docker, CI/CD, Git, Linux, REST APIs (FastAPI, Flask), React, Redis, Object Storage (OSS/S3), AWS, PyTest}
     }}
  \end{itemize}
 
@@ -134,24 +135,25 @@
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Alibaba Cloud}{Hangzhou, China}
+      {Alibaba Cloud (Top-4 Global Cloud Provider)}{Hangzhou, China}
       {AI Engineer Intern}{Jun. 2026 -- Aug. 2026}
       \resumeItemListStart
-        \resumeItem{Collaborated with Alibaba's \textbf{Tongyi Lab} to productize \textbf{Data-Juicer Agents} into natural-language-driven multimodal data-processing workflows for the broader \textbf{Qwen} ecosystem, replacing script-heavy pipelines on the Apsara Data Lake platform.}
-        \resumeItem{Built an agent-to-\textbf{Ray} distributed execution pipeline over private-cloud object storage and Kubernetes --- \textbf{2,793 records, 16 operators, $\sim$5 minutes} --- and landed the core capability upstream through a merged PR.}
+        \resumeItem{Collaborated with Alibaba's \textbf{Tongyi Lab} to productize \textbf{Data-Juicer Agents} into natural-language-driven multimodal data pipelines (cleaning, filtering, deduplication) for the broader \textbf{Qwen} ecosystem, replacing script-heavy workflows on the Apsara Data Lake platform.}
+        \resumeItem{Built an agent-to-\textbf{Ray} distributed execution pipeline over private-cloud object storage (OSS) and Kubernetes --- \textbf{2,793 records, 16 operators, $\sim$5 minutes} --- and landed the core capability upstream through a merged PR.}
         \resumeItem{Designed a three-layer context-control architecture (tool-output compaction, memory compression, hard token budgets) cutting single-tool context payloads by \textbf{82\%} and enabling stable multi-turn agents on 30k-token models.}
-        \resumeItem{Shipped a \textbf{React / FastAPI / MySQL} agent workspace (persistent sessions, execution tracing, rollback, multi-instance isolation; 4 image releases) and contributed \textbf{5 merged PRs} to the 7k$\star$ Data-Juicer open-source ecosystem.}
+        \resumeItem{Shipped a full-stack agent workspace (\textbf{React / FastAPI / MySQL}, REST APIs) with persistent sessions, execution tracing, conversation rollback, and multi-instance isolation; delivered \textbf{4 production container-image releases}.}
+        \resumeItem{Contributed \textbf{5 merged PRs} (PyTest unit coverage, CI green) to the 7k$\star$ Data-Juicer open-source ecosystem across multimodal ingestion, distributed Ray execution, and context optimization; 1 enhancement proposal adopted by maintainers.}
       \resumeItemListEnd
 
     \resumeSubheading
       {Blueberry AI}{Burlingame, CA (Remote)}
       {AI Engineer Intern}{Nov. 2025 -- Dec. 2025}
-      \resumeParagraph{Built a \textbf{Milvus + MySQL} feature-extraction and auto-tagging pipeline batch-indexing \textbf{200K+ images} for landmark / IP / SKU retrieval; benchmarked \textbf{DINOv3, Qwen-VL, and BGE-VL} under a unified recall / precision / latency framework for private deployment; delivered a YOLO + vector-search + Gradio retrieval POC validated for commercial use.}
+      \resumeParagraph{Built a \textbf{Milvus + MySQL} feature-extraction and auto-tagging pipeline batch-indexing \textbf{200K+ images} for landmark / IP / SKU retrieval; benchmarked \textbf{DINOv3, Qwen-VL, and BGE-VL} under a unified recall / precision / latency framework for private deployment; delivered a YOLO + \textbf{Milvus} vector search + Gradio retrieval POC validated for commercial use.}
 
     \resumeSubheading
       {Tsinghua Sichuan Energy Internet Research Institute}{Chengdu, China}
       {Algorithm Engineer Intern}{Sep. 2025 -- Oct. 2025}
-      \resumeParagraph{Engineered a \textbf{DeepLabV3+} semantic-segmentation model for microgrid fault diagnosis reaching \textbf{92\% accuracy} across complex field scenarios; owned the full data lifecycle of \textbf{500+ annotated images} from preprocessing to deployment, anchoring winning bids for major energy-infrastructure projects.}
+      \resumeParagraph{Engineered a \textbf{DeepLabV3+ (PyTorch)} semantic-segmentation model for microgrid fault diagnosis reaching \textbf{92\% accuracy} across complex field scenarios; owned the full data lifecycle of \textbf{500+ annotated images} from preprocessing to deployment, anchoring winning bids for major energy-infrastructure projects.}
 
     \resumeSubheading
       {Leiting Games (G-bits)}{Shenzhen, China}
@@ -166,7 +168,7 @@
 
     \resumeProjectHeading
       {\textbf{ChatDKU --- RAG Campus Q\&A Assistant} $|$ \emph{Python, LlamaIndex, LangChain, Redis}}{Jul. 2024 -- May. 2025}
-      \resumeParagraph{Co-founded a university-adopted \textbf{RAG-agent} Q\&A system indexing \textbf{12,000+ webpages} over a privately deployed LLM; implemented \textbf{Hybrid Search (BM25 + vectors)}, \textbf{HyDE}, and multi-level \textbf{Redis} caching, attaining \textbf{ROUGE 81.1\% / BLEU 60.2\%}; authored the design as a DKU Signature Work.}
+      \resumeParagraph{Co-founded a university-adopted \textbf{Retrieval-Augmented Generation (RAG)} Q\&A agent indexing \textbf{12,000+ webpages} over a privately deployed LLM; implemented \textbf{Hybrid Search (BM25 + vectors)}, \textbf{HyDE}, multi-level \textbf{Redis} caching, and \textbf{SSO} web deployment, attaining \textbf{ROUGE 81.1\% / BLEU 60.2\%}; authored the design as a DKU Signature Work.}
 
   \resumeSubHeadingListEnd
 

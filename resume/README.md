@@ -17,6 +17,13 @@ Source of truth for Chenshuhao (Cody) Qin's English resume (LaTeX, one page).
 
 ## Changelog
 
+### v2026.08.1 (2026-08-29)
+- Filled the page for visual balance (bottom gap 9% → 5%)
+- **ATS keywords**: RAG spelled out, Prompt Engineering, Model Serving (vLLM), Embeddings & Vector Search (Milvus), REST APIs, Object Storage (OSS/S3), PyTest, SQL (MySQL/PostgreSQL); Skills split into 4 lines
+- Alibaba Cloud company line now reads "(Top-4 Global Cloud Provider)"
+- Split Alibaba bullet 4 into workspace / open-source bullets; restored "enhancement proposal adopted by maintainers" + PyTest/CI note
+- ChatDKU: added SSO deployment; Tsinghua: (PyTorch); Blueberry: Milvus vector search spelled out
+
 ### v2026.08 (2026-08-29)
 - **Added** Alibaba Cloud internship (AI Engineer Intern, Jun–Aug 2026): Tongyi Lab collaboration, Data-Juicer Agents productization for the Qwen ecosystem, Ray distributed execution (2,793 records / 16 operators / ~5 min), three-layer context control (−82% payload), full-stack React/FastAPI/MySQL workspace, 5 merged PRs to the 7k★ Data-Juicer ecosystem
 - **Added** Blueberry AI internship (AI Engineer Intern, Remote — Burlingame, CA, Nov–Dec 2025): Milvus + MySQL 200K+ image vector indexing, DINOv3/Qwen-VL/BGE-VL benchmarking, multimodal retrieval POC
