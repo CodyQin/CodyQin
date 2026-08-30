@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chenshuhao (Cody) Qin 秦陈书豪 — AI Engineer</title>
-  <meta name="description" content="Chenshuhao (Cody) Qin — MS CS @ USC. LLM agents, multimodal data pipelines, and the infrastructure underneath. Alibaba Cloud (Tongyi Lab) · Blueberry AI · Tsinghua · G-bits.">
+  <meta name="description" content="Chenshuhao (Cody) Qin — MS CS @ USC '27, Duke/DKU '25. AI systems, cloud infrastructure, and data platforms. Alibaba Cloud (Agent Infra) · Blueberry AI · Tsinghua · G-bits · WWDC23 Scholar.">
   <link rel="icon" type="image/png" href="assets/profile.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,10 +19,10 @@
         <a href="#about">About</a>
         <a href="#education">Education</a>
         <a href="#opensource">Open Source</a>
-        <a href="#publications">Publications</a>
         <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
         <a href="#awards">Awards</a>
-        <!-- <a href="#posts">Posts</a> — enabled when LinkedIn post links are added -->
+        <a href="#projects">Projects</a>
       </div>
       <div class="nav-actions">
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">🌙</button>
@@ -31,85 +31,71 @@
     </div>
   </nav>
 
-  <main id="top">
-    <!-- ============ HERO ============ -->
-    <header class="hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <h1>Chenshuhao (Cody) Qin <span class="cn-name">秦陈书豪</span></h1>
-          <p class="credential">MS, Computer Science · University of Southern California · 2027</p>
-          <p class="tagline">I build AI systems end to end — <strong>LLM agents</strong>, <strong>multimodal data pipelines</strong>, and the <strong>infrastructure</strong> underneath — reliable enough to run in production clouds.</p>
-          <div class="hero-links">
-            <a class="icon-link" href="mailto:cody2363264403@gmail.com" title="Email">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-            </a>
-            <a class="icon-link" href="https://github.com/CodyQin" target="_blank" rel="noopener" title="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.68.41.35.78 1.05.78 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
-            </a>
-            <a class="icon-link" href="https://www.linkedin.com/in/chenshuhao-qin/" target="_blank" rel="noopener" title="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.55V9h3.57v11.45Z"/></svg>
-            </a>
-            <a class="btn btn-primary" href="resume.html">CV / Résumé</a>
-          </div>
-        </div>
-        <div class="hero-photo">
-          <img src="assets/profile.png" alt="Chenshuhao (Cody) Qin" width="320" height="320">
-        </div>
-      </div>
-    </header>
+  <div class="layout" id="top">
+    <!-- ==================== LEFT SIDEBAR ==================== -->
+    <aside class="sidebar">
+      <img class="side-photo" src="assets/profile.png" alt="Chenshuhao (Cody) Qin" width="280" height="282">
+      <h1 class="side-name">Chenshuhao (Cody) Qin</h1>
+      <p class="side-cn">秦陈书豪 <span class="pron">/ CHIN-CHEN-SHOO-HOW /</span></p>
+      <p class="side-credential">MS, Computer Science · USC ’27<br>Duke / DKU ’25</p>
+      <p class="side-mission">Building AI systems, cloud infrastructure, and data platforms — agents that are scalable, reliable, and production-ready.</p>
+      <p class="side-status"><span class="pulse-dot" aria-hidden="true"></span>Open to Summer 2027 · AI Infra / SWE (US)</p>
 
-    <!-- ============ ABOUT ============ -->
-    <section id="about" class="section">
-      <div class="container">
-        <h2 class="section-title">About</h2>
+      <ul class="side-links">
+        <li><a href="mailto:chenshuh@usc.edu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a></li>
+        <li><a href="https://github.com/CodyQin" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.68.41.35.78 1.05.78 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>GitHub</a></li>
+        <li><a href="https://scholar.google.com/citations?user=yY14am0AAAAJ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10c7.2 0 10.002 4.323 10.002 8.354 0 2.756-2.395 5.646-5.898 5.646h-8.21c-3.503 0-5.898-2.89-5.898-5.646C1.998 14.323 4.8 10 12 10zm-.5 8.5c-1.38 0-2.5 1.002-2.5 2.5h6.937c0-1.498-1.057-2.5-2.437-2.5h-2z"/></svg>Google Scholar</a></li>
+        <li><a href="https://www.linkedin.com/in/chenshuhao-qin/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.55V9h3.57v11.45Z"/></svg>LinkedIn</a></li>
+        <li><a href="https://github.com/CodyQin/CodyQin/blob/main/resume/Chenshuhao_Qin_Resume.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Résumé (PDF)</a></li>
+      </ul>
+
+      <a class="btn btn-primary side-cv" href="resume.html">View CV</a>
+    </aside>
+
+    <!-- ==================== RIGHT CONTENT ==================== -->
+    <main class="content">
+
+      <!-- ============ ABOUT ============ -->
+      <section id="about" class="sec">
+        <h2 class="sec-title">About</h2>
         <div class="about-grid">
-          <p class="about-text">
-            I'm a Master's student in Computer Science at <strong>USC</strong> (Class of 2027) and a Duke Kunshan
-            University CS graduate. I work across the AI stack — orchestrating <strong>LLM agents</strong> that
-            process multimodal training data, building the <strong>distributed infrastructure</strong> (Ray, Kubernetes)
-            they run on, and shipping the full-stack workspaces people use to drive them.
-          </p>
-          <p class="about-text">
-            Most recently I was an AI Engineer Intern at <strong>Alibaba Cloud</strong> — ranked a
-            <strong>global top-4 cloud service provider</strong> — collaborating with <strong>Tongyi Lab</strong> on
-            agent-based multimodal data infrastructure for the broader <strong>Qwen</strong> ecosystem, and shipping
-            five merged PRs into the open-source <a href="https://github.com/datajuicer" target="_blank" rel="noopener">Data-Juicer</a> ecosystem along the way.
-            Before that: multimodal retrieval at Blueberry AI, AIGC pipelines at G-bits, and a university-adopted
-            RAG assistant (<a href="#publications">ChatDKU</a>).
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ EDUCATION ============ -->
-    <section id="education" class="section section-compact">
-      <div class="container">
-        <h2 class="section-title">Education</h2>
-        <div class="edu-row">
-          <div class="edu-item reveal">
-            <div class="edu-logo usc">SC</div>
-            <div>
-              <div class="edu-degree">MS, Computer Science</div>
-              <div class="edu-school">University of Southern California</div>
-              <div class="edu-meta">Los Angeles, CA · Jan 2026 – Dec 2027 (expected)</div>
-            </div>
+          <div class="about-text">
+            <p>I'm Chenshuhao (Cody) Qin — a Computer Science graduate student at <strong>USC</strong> and a Duke Kunshan / Duke University alumnus. My interests sit at the intersection of <strong>AI systems, cloud infrastructure, and data platforms</strong>.</p>
+            <p>I'm currently an AI Engineering Intern at <strong>Alibaba Cloud</strong> — ranked a <strong>global top-4 cloud service provider</strong> — on AI platform &amp; data-agent infrastructure, working with Kubernetes, distributed systems, and LLM data agents in the <strong>Qwen</strong> ecosystem.</p>
+            <p>Previously I've taken ideas from prototype to production across <strong>healthcare, gaming, energy, and finance</strong>: multimodal retrieval at Blueberry AI, AIGC pipelines at G-bits, grid fault diagnosis at Tsinghua, speech AI at ABC — plus a university-adopted campus AI assistant (ChatDKU) and an Apple WWDC23 Swift Student Challenge win.</p>
+            <p>I'm actively seeking <strong>Summer 2027 internships</strong> in the US — AI Infrastructure, AI Platform Engineering, Distributed Systems, or Applied AI. Reach me at <a href="mailto:chenshuh@usc.edu">chenshuh@usc.edu</a>.</p>
           </div>
-          <div class="edu-item reveal">
-            <div class="edu-logo dku">D</div>
-            <div>
-              <div class="edu-degree">BS, Computer Science · BS, Computation &amp; Design</div>
-              <div class="edu-school">Duke University / Duke Kunshan University</div>
-              <div class="edu-meta">Durham, NC &amp; Kunshan, China · Aug 2021 – May 2025</div>
-            </div>
+          <figure class="about-photo">
+            <img src="assets/alibaba-photo.png" alt="At Alibaba Cloud, Hangzhou, 2026" loading="lazy">
+            <figcaption>Alibaba Cloud · Hangzhou · 2026</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ============ EDUCATION ============ -->
+      <section id="education" class="sec">
+        <h2 class="sec-title">Education</h2>
+        <div class="edu-item reveal">
+          <span class="logo-chip"><img src="assets/logos/usc.png" alt="USC" loading="lazy"></span>
+          <div>
+            <div class="edu-degree">MS, Computer Science</div>
+            <div class="edu-school">University of Southern California</div>
+            <div class="edu-meta">Los Angeles, CA · Jan 2026 – Dec 2027 (expected)</div>
           </div>
         </div>
-      </div>
-    </section>
+        <div class="edu-item reveal">
+          <span class="logo-chip"><img src="assets/logos/dku.jpg" alt="Duke Kunshan University" loading="lazy"></span>
+          <div>
+            <div class="edu-degree">BS, Computer Science · BS, Interdisciplinary Studies (CS &amp; Computation and Design)</div>
+            <div class="edu-school">Duke Kunshan University · Duke University</div>
+            <div class="edu-meta">Kunshan, China &amp; Durham, NC · Aug 2021 – May 2025</div>
+          </div>
+        </div>
+      </section>
 
-    <!-- ============ OPEN SOURCE ============ -->
-    <section id="opensource" class="section">
-      <div class="container">
-        <h2 class="section-title">Open Source <span class="title-note">· Flagship contributions</span></h2>
+      <!-- ============ OPEN SOURCE ============ -->
+      <section id="opensource" class="sec">
+        <h2 class="sec-title">Open Source <span class="title-note">· Flagship contributions</span></h2>
         <div class="oss-grid">
           <a class="oss-card reveal" href="https://github.com/datajuicer/data-juicer" target="_blank" rel="noopener">
             <div class="oss-head">
@@ -137,88 +123,25 @@
         </div>
 
         <ul class="pr-list">
-          <li class="reveal">
-            <span class="pr-repo">data-juicer-agents</span>
-            <a href="https://github.com/datajuicer/data-juicer-agents/pull/47" target="_blank" rel="noopener">#47 feat: bound session context for small-window models — three-layer context control, −82% tool payload</a>
-            <span class="pr-tag pr-merged">merged</span><span class="pr-date">Aug 2026</span>
-          </li>
-          <li class="reveal">
-            <span class="pr-repo">data-juicer-agents</span>
-            <a href="https://github.com/datajuicer/data-juicer-agents/pull/46" target="_blank" rel="noopener">#46 feat: submit_ray_job tool for distributed dj-process on Ray</a>
-            <span class="pr-tag pr-merged">merged</span><span class="pr-date">Jul 2026</span>
-          </li>
-          <li class="reveal">
-            <span class="pr-repo">data-juicer-agents</span>
-            <a href="https://github.com/datajuicer/data-juicer-agents/pull/45" target="_blank" rel="noopener">#45 feat: scan_media_folder tool for raw media ingestion</a>
-            <span class="pr-tag pr-merged">merged</span><span class="pr-date">Jul 2026</span>
-          </li>
-          <li class="reveal">
-            <span class="pr-repo">data-juicer</span>
-            <a href="https://github.com/datajuicer/data-juicer/pull/992" target="_blank" rel="noopener">#992 fix: resolve LATEST strategy returning unpinned dependency versions</a>
-            <span class="pr-tag pr-merged">merged</span><span class="pr-date">Jun 2026</span>
-          </li>
-          <li class="reveal">
-            <span class="pr-repo">data-juicer-agents</span>
-            <a href="https://github.com/datajuicer/data-juicer-agents/pull/44" target="_blank" rel="noopener">#44 docs: fix outdated djx retrieve quick-start</a>
-            <span class="pr-tag pr-merged">merged</span><span class="pr-date">Jun 2026</span>
-          </li>
-          <li class="reveal">
-            <span class="pr-repo">data-juicer</span>
-            <a href="https://github.com/datajuicer/data-juicer/issues/1019" target="_blank" rel="noopener">#1019 fail-fast validation for single-machine deduplicators under executor_type=ray</a>
-            <span class="pr-tag pr-issue">adopted</span><span class="pr-date">Aug 2026</span>
-          </li>
+          <li class="reveal"><span class="pr-repo">data-juicer-agents</span><a href="https://github.com/datajuicer/data-juicer-agents/pull/47" target="_blank" rel="noopener">#47 feat: bound session context for small-window models — three-layer context control, −82% tool payload</a><span class="pr-tag pr-merged">merged</span><span class="pr-date">Aug 2026</span></li>
+          <li class="reveal"><span class="pr-repo">data-juicer-agents</span><a href="https://github.com/datajuicer/data-juicer-agents/pull/46" target="_blank" rel="noopener">#46 feat: submit_ray_job tool for distributed dj-process on Ray</a><span class="pr-tag pr-merged">merged</span><span class="pr-date">Jul 2026</span></li>
+          <li class="reveal"><span class="pr-repo">data-juicer-agents</span><a href="https://github.com/datajuicer/data-juicer-agents/pull/45" target="_blank" rel="noopener">#45 feat: scan_media_folder tool for raw media ingestion</a><span class="pr-tag pr-merged">merged</span><span class="pr-date">Jul 2026</span></li>
+          <li class="reveal"><span class="pr-repo">data-juicer</span><a href="https://github.com/datajuicer/data-juicer/pull/992" target="_blank" rel="noopener">#992 fix: resolve LATEST strategy returning unpinned dependency versions</a><span class="pr-tag pr-merged">merged</span><span class="pr-date">Jun 2026</span></li>
+          <li class="reveal"><span class="pr-repo">data-juicer-agents</span><a href="https://github.com/datajuicer/data-juicer-agents/pull/44" target="_blank" rel="noopener">#44 docs: fix outdated djx retrieve quick-start</a><span class="pr-tag pr-merged">merged</span><span class="pr-date">Jun 2026</span></li>
+          <li class="reveal"><span class="pr-repo">data-juicer</span><a href="https://github.com/datajuicer/data-juicer/issues/1019" target="_blank" rel="noopener">#1019 fail-fast validation for single-machine deduplicators under executor_type=ray</a><span class="pr-tag pr-issue">adopted</span><span class="pr-date">Aug 2026</span></li>
         </ul>
-      </div>
-    </section>
+      </section>
 
-    <!-- ============ PUBLICATIONS ============ -->
-    <section id="publications" class="section">
-      <div class="container">
-        <h2 class="section-title">Publications <span class="title-note">· &amp; thesis</span></h2>
-
-        <article class="pub-card reveal">
-          <div class="pub-left">
-            <a class="pub-thumb" href="https://scholars.duke.edu/publication/1652347" target="_blank" rel="noopener">
-              <img src="assets/chatdku-dataflow.png" alt="ChatDKU data flow" loading="lazy">
-            </a>
-          </div>
-          <div class="pub-body">
-            <div class="pub-venues"><span class="venue-badge">ACM SenSys 2024</span><span class="venue-badge venue-demo">Demo Track</span></div>
-            <h3><a href="https://scholars.duke.edu/publication/1652347" target="_blank" rel="noopener">Privacy-Preserving Room Occupancy Estimation Using Federated Analytics of BLE Packets</a></h3>
-            <p class="pub-authors">Boyan Zhang, <strong>Chenshuhao Qin</strong>, Bing Luo — Duke Kunshan University</p>
-            <p class="pub-meta">Proc. 22nd ACM Conference on Embedded Networked Sensor Systems (SenSys '24), Hangzhou, China, pp. 889–890 · <strong>95%</strong> real-world accuracy</p>
-            <div class="pub-links"><a href="https://scholars.duke.edu/publication/1652347" target="_blank" rel="noopener">Duke Scholars</a><a href="https://dblp.org/db/conf/sensys/sensys2024" target="_blank" rel="noopener">DBLP</a></div>
-          </div>
-        </article>
-
-        <article class="pub-card reveal">
-          <div class="pub-left">
-            <a class="pub-thumb" href="#experience">
-              <img src="assets/chatdku-architecture.png" alt="ChatDKU architecture" loading="lazy">
-            </a>
-          </div>
-          <div class="pub-body">
-            <div class="pub-venues"><span class="venue-badge venue-thesis">Signature Work</span><span class="venue-badge venue-thesis">Duke Kunshan University</span></div>
-            <h3>Design and Implementation of Improving a RAG-Agent-Based Campus Q&amp;A System: A Case Study of ChatDKU</h3>
-            <p class="pub-authors"><strong>Chenshuhao Qin</strong> — advisor: Prof. Bing Luo</p>
-            <p class="pub-meta">Undergraduate thesis (Signature Work Program), Mar 2025 · system officially adopted by the university</p>
-            <div class="pub-links"><a href="#experience">Project details</a></div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ============ EXPERIENCE ============ -->
-    <section id="experience" class="section">
-      <div class="container">
-        <h2 class="section-title">Experience</h2>
+      <!-- ============ EXPERIENCE ============ -->
+      <section id="experience" class="sec">
+        <h2 class="sec-title">Experience</h2>
 
         <article class="xp-card reveal">
           <div class="xp-head">
-            <div class="xp-logo alibaba">云</div>
+            <span class="logo-chip"><img src="assets/logos/alibaba.jpg" alt="Alibaba Cloud" loading="lazy"></span>
             <div class="xp-titles">
-              <h3>AI Engineer Intern</h3>
-              <div class="xp-org">Alibaba Cloud <span class="xp-note">· ranked global top-4 cloud service provider · Tongyi Lab collaboration · Qwen ecosystem</span></div>
+              <h3>AI Engineer Intern — Agent Infrastructure</h3>
+              <div class="xp-org">Alibaba Cloud <span class="xp-note">· ranked a global top-4 cloud service provider · Apsara Stack, PaaS Product R&amp;D &amp; Architecture · Tongyi Lab collaboration · Qwen ecosystem</span></div>
             </div>
             <div class="xp-when">Jun 2026 – Aug 2026 · Hangzhou, China</div>
           </div>
@@ -234,107 +157,229 @@
 
         <article class="xp-card reveal">
           <div class="xp-head">
-            <div class="xp-logo blueberry">B</div>
+            <span class="logo-chip"><img src="assets/logos/blueberry.jpg" alt="Blueberry AI" loading="lazy"></span>
             <div class="xp-titles">
               <h3>AI Engineer Intern</h3>
               <div class="xp-org">Blueberry AI</div>
             </div>
-            <div class="xp-when">Nov 2025 – Dec 2025 · Remote (Burlingame, CA)</div>
+            <div class="xp-when">Nov 2025 – Jan 2026 · Remote (Burlingame, CA)</div>
           </div>
           <ul class="xp-bullets">
             <li>Built a <strong>Milvus + MySQL</strong> feature-extraction and auto-tagging pipeline batch-indexing <strong>200K+ images</strong> for landmark / IP / SKU retrieval.</li>
             <li>Benchmarked <strong>DINOv3, Qwen-VL, BGE-VL</strong> under a unified recall / precision / latency framework for private-deployment model selection.</li>
-            <li>Delivered an end-to-end multimodal retrieval POC (<strong>YOLO + Milvus vector search + Gradio</strong>) validated for commercial use.</li>
+            <li>Delivered an end-to-end multimodal retrieval POC (<strong>YOLO + Milvus vector search + Gradio</strong>), reproducing the Tiffany SKU-search and landmark-IP retrieval demos for commercial validation.</li>
           </ul>
           <div class="chips"><span>Milvus</span><span>Vector Search</span><span>DINOv3</span><span>Qwen-VL</span><span>YOLO</span><span>Python</span></div>
         </article>
 
         <article class="xp-card reveal">
           <div class="xp-head">
-            <div class="xp-logo tsinghua">清</div>
+            <span class="logo-chip"><img src="assets/logos/tsinghua.jpg" alt="Tsinghua" loading="lazy"></span>
             <div class="xp-titles">
-              <h3>Algorithm Engineer Intern</h3>
-              <div class="xp-org">Tsinghua Sichuan Energy Internet Research Institute</div>
+              <h3>AI Algorithm Engineer Intern</h3>
+              <div class="xp-org">Sichuan Energy Internet Research Institute, Tsinghua University</div>
             </div>
             <div class="xp-when">Sep 2025 – Oct 2025 · Chengdu, China</div>
           </div>
           <ul class="xp-bullets">
             <li>Engineered a <strong>DeepLabV3+ (PyTorch)</strong> semantic-segmentation model for microgrid fault diagnosis reaching <strong>92% accuracy</strong> in complex field scenarios.</li>
-            <li>Owned the end-to-end data lifecycle of <strong>500+ annotated images</strong>; the solution anchored winning bids for major energy-infrastructure projects.</li>
+            <li>Curated a <strong>500+ image dataset</strong> and built the end-to-end deployment pipeline; results were incorporated into the institute's official project-bidding proposals as a key technical differentiator.</li>
           </ul>
           <div class="chips"><span>PyTorch</span><span>DeepLabV3+</span><span>Computer Vision</span><span>OpenCV</span></div>
         </article>
 
         <article class="xp-card reveal">
           <div class="xp-head">
-            <div class="xp-logo gbits">G</div>
+            <span class="logo-chip"><img src="assets/logos/gbits.jpg" alt="G-bits" loading="lazy"></span>
             <div class="xp-titles">
-              <h3>AI R&amp;D Intern (AIGC &amp; Automation)</h3>
-              <div class="xp-org">Leiting Games (G-bits)</div>
+              <h3>AI Engineer Intern (AIGC &amp; Automation)</h3>
+              <div class="xp-org">G-bits · Leiting Games</div>
             </div>
             <div class="xp-when">May 2025 – Aug 2025 · Shenzhen, China</div>
           </div>
           <ul class="xp-bullets">
-            <li>Fine-tuned <strong>SDXL / Flux LoRA</strong> models on Kohya; the AIGC pipeline shipped 30+ ad assets (80% adoption) driving <strong>117K+ installs</strong> and <strong>¥24.6M billings (196% ROI)</strong>.</li>
-            <li>Led a 5-person cross-functional team automating the ad-creative loop — <strong>3×</strong> weekly output, 15–20% higher material ROI.</li>
-            <li>Built a closed-loop monitor catching <strong>1,000+ private-server violations</strong> at 98.85% accuracy; selected as the data center's only <strong>2025 Best Practice</strong>.</li>
+            <li>Fine-tuned <strong>SDXL / Flux LoRA</strong> models on Kohya; shipped 30+ AIGC ad assets (80% adoption) that drove <strong>117K+ installs</strong> and <strong>¥24.6M billings (196% ROI)</strong>.</li>
+            <li>Led a 5-person cross-functional team automating the ad-creative loop (Dify + RPA) — <strong>3×</strong> weekly output, 15–20% higher material ROI.</li>
+            <li>Built a Dify + RPA private-server monitor catching <strong>1,000+ violations</strong> at 98.85% accuracy; selected as the data center's only <strong>2025 Best Practice</strong>.</li>
           </ul>
-          <div class="chips"><span>SDXL</span><span>Flux</span><span>LoRA</span><span>Kohya</span><span>RPA</span><span>Dify</span></div>
+          <div class="chips"><span>SDXL</span><span>Flux</span><span>LoRA</span><span>Kohya</span><span>Dify</span><span>RPA</span></div>
         </article>
-      </div>
-    </section>
 
-    <!-- ============ AWARDS ============ -->
-    <section id="awards" class="section section-compact">
-      <div class="container">
-        <h2 class="section-title">Awards &amp; Honors</h2>
-        <ul class="award-list">
-          <li class="reveal"><span class="award-logo apple"></span><span class="award-name">Apple WWDC23 Swift Student Challenge — Winner</span><span class="award-note">1 of 13 in China</span><span class="award-year">2023</span></li>
-          <li class="reveal"><span class="award-logo gbits-award">G</span><span class="award-name">Leiting Games Data-Center Best Practice</span><span class="award-note">only selected case of the data center</span><span class="award-year">2025</span></li>
-          <li class="reveal"><span class="award-logo grant">$</span><span class="award-name">Provincial Innovation Grant Recipient</span><span class="award-note">$3,000</span><span class="award-year"></span></li>
-          <li class="reveal"><span class="award-logo dku-amb">DKU</span><span class="award-name">Duke Kunshan University Student Ambassador</span><span class="award-note"></span><span class="award-year"></span></li>
+        <h3 class="sub-title">Earlier Experience</h3>
+        <ul class="row-list">
+          <li class="reveal">
+            <span class="logo-chip sm"><img src="assets/logos/dku.jpg" alt="DKU" loading="lazy"></span>
+            <div class="row-main"><strong>Founding Member — ChatDKU Campus AI Assistant</strong><span class="row-org">Duke Kunshan University · Edge Intelligent Lab</span>
+              <span class="row-desc">RAG pipeline, retrieval accuracy, and SSO web interface for a campus assistant deployed at DKU and recognized by multiple university offices.</span></div>
+            <span class="row-when">Jul 2024 – May 2025</span>
+          </li>
+          <li class="reveal">
+            <span class="logo-chip sm"><img src="assets/logos/dku.jpg" alt="DKU" loading="lazy"></span>
+            <div class="row-main"><strong>Research Assistant — Edge Intelligent Lab</strong><span class="row-org">Duke Kunshan University</span>
+              <span class="row-desc">Federated room-occupancy estimation over BLE — 95% accuracy, ¥20k provincial grant, ACM SenSys 2024 demo paper.</span></div>
+            <span class="row-when">Jul 2024 – Nov 2024</span>
+          </li>
+          <li class="reveal">
+            <span class="logo-chip sm monogram">C</span>
+            <div class="row-main"><strong>AI Engineer</strong><span class="row-org">Shanghai CareLinker Medical Technology</span>
+              <span class="row-desc">Coze Workflow + RAG + dialogue agents for Type-2 diabetes treatment evaluation; used in the AstraZeneca-backed “Elite Pharmacist” competition across 9 pharmacy chains.</span></div>
+            <span class="row-when">Apr 2025</span>
+          </li>
+          <li class="reveal">
+            <span class="logo-chip sm"><img src="assets/logos/abc.png" alt="ABC" loading="lazy"></span>
+            <div class="row-main"><strong>AI Engineer Intern — Voice AI</strong><span class="row-org">Agricultural Bank of China · Chengdu R&amp;D Center</span>
+              <span class="row-desc">Real-time speech recognition platform (FunASR / Paraformer-zh, CAM++, FSMN-VAD) — +18% accuracy, 30+ executive meetings transcribed.</span></div>
+            <span class="row-when">Aug 2024 – Sep 2024</span>
+          </li>
+          <li class="reveal">
+            <span class="logo-chip sm"><img src="assets/logos/apple.jpg" alt="Apple" loading="lazy"></span>
+            <div class="row-main"><strong>Co-Founder — iOS Club @ U-Corp Innovation Lab</strong><span class="row-org">Apple (Shanghai) × Duke Kunshan University</span>
+              <span class="row-desc">Co-founded DKU's first iOS Club; organized the university's first VR design competition ($1,000 funding) and ran Swift workshops.</span></div>
+            <span class="row-when">Sep 2022 – May 2023</span>
+          </li>
+          <li class="reveal">
+            <span class="logo-chip sm"><img src="assets/logos/dku.jpg" alt="DKU" loading="lazy"></span>
+            <div class="row-main"><strong>Teaching Assistant — Introduction to Computer Science</strong><span class="row-org">Duke Kunshan University</span>
+              <span class="row-desc">Labs and assignments; built an automated grading system with nbgrader.</span></div>
+            <span class="row-when">Dec 2021 – May 2022</span>
+          </li>
         </ul>
-      </div>
-    </section>
+      </section>
 
-    <!-- ============ POSTS (LinkedIn) — enable when links are provided
-    <section id="posts" class="section">
-      <div class="container">
-        <h2 class="section-title">Posts</h2>
-        <div class="post-grid">
-          <a class="post-card reveal" href="POST_URL">
-            <img class="post-img" src="OG_IMAGE" alt="">
-            <div class="post-body">
-              <div class="post-date">DATE</div>
-              <h3>POST_TITLE</h3>
-              <p>POST_TEASER</p>
+      <!-- ============ PUBLICATIONS ============ -->
+      <section id="publications" class="sec">
+        <h2 class="sec-title">Publications</h2>
+
+        <article class="pub-card reveal">
+          <div class="pub-body">
+            <div class="pub-venues"><span class="venue-badge">ACM SenSys 2024</span><span class="venue-badge venue-demo">Demo Track</span></div>
+            <h3><a href="https://dl.acm.org/doi/10.1145/3666025.3699422" target="_blank" rel="noopener">Privacy-Preserving Room Occupancy Estimation Using Federated Analytics of BLE Packets</a></h3>
+            <p class="pub-authors">Boyan Zhang, <strong>Chenshuhao Qin</strong>, Bing Luo — Duke Kunshan University</p>
+            <p class="pub-meta">Proc. 22nd ACM Conference on Embedded Networked Sensor Systems (SenSys '24), Hangzhou, China, pp. 889–890 · <strong>95%</strong> real-world accuracy · funded by a ¥20,000 provincial innovation grant</p>
+            <div class="pub-links"><a href="https://dl.acm.org/doi/10.1145/3666025.3699422" target="_blank" rel="noopener">ACM DL</a><a href="https://scholars.duke.edu/publication/1652347" target="_blank" rel="noopener">Duke Scholars</a><a href="https://ine.dukekunshan.edu.cn/project/edge-iot/" target="_blank" rel="noopener">Edge IoT project</a></div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============ AWARDS ============ -->
+      <section id="awards" class="sec">
+        <h2 class="sec-title">Awards &amp; Honors <span class="title-note">· click to view certificates</span></h2>
+
+        <div class="cert-grid">
+          <a class="cert-card reveal" href="assets/awards/wwdc23.jpg" target="_blank" rel="noopener">
+            <img src="assets/awards/wwdc23.jpg" alt="WWDC23 Swift Student Challenge winner announcement" loading="lazy">
+            <div class="cert-body">
+              <div class="cert-name">Apple WWDC23 Swift Student Challenge — Winner</div>
+              <div class="cert-note">one of 13 in China · the sole winner from Jiangsu Province</div>
+              <div class="cert-date">2023</div>
+            </div>
+          </a>
+          <a class="cert-card reveal" href="assets/awards/apple-ucorp.jpg" target="_blank" rel="noopener">
+            <img src="assets/awards/apple-ucorp.jpg" alt="U-Corp @ Apple certificate of achievement" loading="lazy">
+            <div class="cert-body">
+              <div class="cert-name">Certificate of Achievement — U-Corp @ Apple · iOS Project</div>
+              <div class="cert-note">Duke Kunshan University Innovation and Entrepreneurship Initiative</div>
+              <div class="cert-date">2023 Spring</div>
+            </div>
+          </a>
+          <a class="cert-card reveal" href="assets/awards/damo.jpg" target="_blank" rel="noopener">
+            <img src="assets/awards/damo.jpg" alt="AI Trainer (Advanced) certificate from DAMO" loading="lazy">
+            <div class="cert-body">
+              <div class="cert-name">AI Trainer Certificate (Advanced) — Intelligent DAMO</div>
+              <div class="cert-note">Certificate No. AIT250605025456000138</div>
+              <div class="cert-date">Issued Jun 2025 · expired Jun 2026</div>
+            </div>
+          </a>
+          <a class="cert-card reveal" href="assets/awards/ambassador.jpg" target="_blank" rel="noopener">
+            <img src="assets/awards/ambassador.jpg" alt="DKU Student Ambassador certificate" loading="lazy">
+            <div class="cert-body">
+              <div class="cert-name">Student Ambassador — Duke Kunshan University</div>
+              <div class="cert-note">Office of China Enrollment Management</div>
+              <div class="cert-date">2021 – 2022</div>
             </div>
           </a>
         </div>
-      </div>
-    </section>
-    ============ -->
 
-    <!-- ============ CONTACT ============ -->
-    <section id="contact" class="section section-contact">
-      <div class="container contact-inner">
-        <h2 class="section-title">Contact</h2>
-        <p class="contact-line">The fastest way to reach me is <a href="mailto:cody2363264403@gmail.com">cody2363264403@gmail.com</a> — I'm open to Summer 2027 SDE / AI-Engineering internships.</p>
+        <ul class="award-list">
+          <li class="reveal"><span class="logo-chip sm"><img src="assets/logos/gbits.jpg" alt="G-bits" loading="lazy"></span><span class="award-name">Leiting Games Data-Center Best Practice</span><span class="award-note">only selected case of the data center</span><span class="award-year">2025</span></li>
+          <li class="reveal"><span class="logo-chip sm monogram">¥</span><span class="award-name">Provincial Innovation Grant</span><span class="award-note">¥20,000 — funded the Edge IoT federated-learning project</span><span class="award-year"></span></li>
+        </ul>
+      </section>
+
+      <!-- ============ PROJECTS ============ -->
+      <section id="projects" class="sec">
+        <h2 class="sec-title">Projects <span class="title-note">· &amp; things I've built</span></h2>
+
+        <article class="proj-featured reveal">
+          <div class="proj-media">
+            <a href="https://www.youtube.com/watch?v=SdItulvqdLo" target="_blank" rel="noopener" class="video-thumb">
+              <img src="assets/chatdku-video1.jpg" alt="Introducing ChatDKU" loading="lazy"><span class="play">▶</span>
+            </a>
+            <a href="https://www.youtube.com/watch?v=Os1Xb_CidMY" target="_blank" rel="noopener" class="video-thumb">
+              <img src="assets/chatdku-video2.jpg" alt="ChatDKU RAG-agent demo" loading="lazy"><span class="play">▶</span>
+            </a>
+          </div>
+          <div class="proj-body">
+            <h3>ChatDKU <span class="badge">University-adopted</span></h3>
+            <p class="proj-meta">RAG-agent campus Q&amp;A assistant · Duke Kunshan University · Jul 2024 – May 2025</p>
+            <p>Co-founded an AI assistant serving the DKU community — indexing <strong>12,000+ webpages</strong> and hundreds of documents over a privately deployed LLM, with <strong>hybrid search (BM25 + vectors)</strong>, <strong>HyDE</strong>, multi-level <strong>Redis</strong> caching, and <strong>SSO</strong> web deployment. The system has since been deployed at DKU and recognized by multiple university offices; I documented its architecture and development as a DKU Signature Work.</p>
+            <div class="chips"><span>LlamaIndex</span><span>LangChain</span><span>Redis</span><span>SSO</span><span>Python</span></div>
+          </div>
+        </article>
+
+        <div class="proj-grid">
+          <article class="proj-card reveal">
+            <h3>Edge IoT — Study-Place Finder</h3>
+            <p class="proj-meta">DKU Innovation &amp; Entrepreneurship Initiative</p>
+            <p>Scalable campus IoT infrastructure for real-time room-occupancy data: BLE sensing evolved into a hardware + software framework with OTA updates, helping students find free team rooms. Federated-learning occupancy estimation hit <strong>95%</strong> accuracy → ACM SenSys 2024 demo.</p>
+            <a class="proj-link" href="https://ine.dukekunshan.edu.cn/project/edge-iot/" target="_blank" rel="noopener">Project page →</a>
+            <div class="chips"><span>Federated Learning</span><span>BLE</span><span>IoT</span></div>
+          </article>
+
+          <article class="proj-card reveal">
+            <h3>Ferryman Puzzle</h3>
+            <p class="proj-meta">Apple WWDC23 Swift Student Challenge · Accepted 🏆</p>
+            <p>An interactive SwiftUI game reimagining the classic wolf-goat-cabbage river crossing (a 9th-century folklore). Listed as <strong>Accepted</strong> in the official wwdc/2023 registry.</p>
+            <a class="proj-link" href="https://github.com/CodyQin/Ferryman-Puzzle" target="_blank" rel="noopener">GitHub →</a>
+            <a class="proj-link" href="https://github.com/wwdc/2023" target="_blank" rel="noopener">wwdc/2023 ↗</a>
+            <div class="chips"><span>SwiftUI</span><span>Swift Playgrounds</span></div>
+          </article>
+
+          <article class="proj-card reveal proj-photo-card">
+            <img class="proj-photo" src="assets/ios-club-photo.jpg" alt="iOS Club activity at DKU" loading="lazy">
+            <div class="proj-photo-body">
+              <h3>iOS Club @ DKU</h3>
+              <p class="proj-meta">U-Corp Innovation Lab × Apple · 2022 – 2023</p>
+              <p>DKU's first iOS Club: VR design competition, Swift workshops, and a sustainable campus developer community — in collaboration with Apple Shanghai. <em>(That's me in green.)</em></p>
+              <a class="proj-link" href="https://ine.dukekunshan.edu.cn/project/u-corp-apple-ios-club/" target="_blank" rel="noopener">Project page →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section id="contact" class="sec sec-contact">
+        <h2 class="sec-title">Contact</h2>
+        <p>The fastest way to reach me is <a href="mailto:chenshuh@usc.edu">chenshuh@usc.edu</a> — I'm open to Summer 2027 SDE / AI-Engineering internships in the US.</p>
         <div class="hero-links contact-links">
-          <a class="btn btn-primary" href="mailto:cody2363264403@gmail.com">Email</a>
+          <a class="btn btn-primary" href="mailto:chenshuh@usc.edu">Email</a>
           <a class="btn" href="https://github.com/CodyQin" target="_blank" rel="noopener">GitHub</a>
           <a class="btn" href="https://www.linkedin.com/in/chenshuhao-qin/" target="_blank" rel="noopener">LinkedIn</a>
           <a class="btn" href="resume.html">CV</a>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+
+      <!-- POSTS section scaffold — enable when LinkedIn post links are provided
+      <section id="posts" class="sec">...</section>
+      -->
+    </main>
+  </div>
 
   <footer class="footer">
     <div class="container footer-inner">
       <span>© 2026 Chenshuhao (Cody) Qin · 秦陈书豪</span>
       <span>Los Angeles, CA</span>
-      <a href="mailto:cody2363264403@gmail.com">cody2363264403@gmail.com</a>
+      <a href="mailto:chenshuh@usc.edu">chenshuh@usc.edu</a>
     </div>
   </footer>
 

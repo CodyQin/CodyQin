@@ -51,3 +51,8 @@ git push origin main --tags
 ## Sync to Overleaf
 
 Open the Overleaf project → select all → paste the full content of `Chenshuhao_Qin_Resume.tex` → recompile. (Git access on Overleaf requires Premium; paste-sync is the free path.)
+
+### v2026.08.3 (2026-08-29)
+- Email switched to chenshuh@usc.edu (school email only)
+- ChatDKU: ROUGE/BLEU replaced with deployment outcome (deployed at DKU, recognized by multiple offices, documented as Signature Work)
+- Merged Projects + Publications into one "Projects & Publications" section
