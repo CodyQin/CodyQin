@@ -17,6 +17,9 @@ Source of truth for Chenshuhao (Cody) Qin's English resume (LaTeX, one page).
 
 ## Changelog
 
+### v2026.08.4 (2026-08-29)
+- Added "agent harness" positioning: Data-Juicer Agents identified as an open-source agent harness (bullet 1); Skills line now "Agent Harness & Context Engineering"
+
 ### v2026.08.3 (2026-08-29)
 - Email switched to chenshuh@usc.edu (school email only)
 - ChatDKU: ROUGE/BLEU replaced with deployment outcome (deployed at DKU, recognized by multiple offices, documented as Signature Work)
