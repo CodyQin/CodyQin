@@ -17,6 +17,10 @@ Source of truth for Chenshuhao (Cody) Qin's English resume (LaTeX, one page).
 
 ## Changelog
 
+### v2026.08.6 (2026-08-29)
+- Header now includes personal website (codyqin.github.io/CodyQin) alongside GitHub/LinkedIn
+- "5 merged PRs" hyperlinked to the author-filtered PR list (data-juicer-agents)
+
 ### v2026.08.5 (2026-08-29)
 - Skills taxonomy cleaned up: Languages / AI & ML / LLM & Agents / Infrastructure & Distributed Systems
 - Ray moved to the front of the distributed-systems line; databases consolidated into infrastructure
