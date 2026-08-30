@@ -17,6 +17,11 @@ Source of truth for Chenshuhao (Cody) Qin's English resume (LaTeX, one page).
 
 ## Changelog
 
+### v2026.08.3 (2026-08-29)
+- Email switched to chenshuh@usc.edu (school email only)
+- ChatDKU: ROUGE/BLEU replaced with deployment outcome (deployed at DKU, recognized by multiple offices, documented as Signature Work)
+- Merged Projects + Publications into one "Projects & Publications" section
+
 ### v2026.08.1 (2026-08-29)
 - Filled the page for visual balance (bottom gap 9% → 5%)
 - **ATS keywords**: RAG spelled out, Prompt Engineering, Model Serving (vLLM), Embeddings & Vector Search (Milvus), REST APIs, Object Storage (OSS/S3), PyTest, SQL (MySQL/PostgreSQL); Skills split into 4 lines
@@ -51,8 +56,3 @@ git push origin main --tags
 ## Sync to Overleaf
 
 Open the Overleaf project → select all → paste the full content of `Chenshuhao_Qin_Resume.tex` → recompile. (Git access on Overleaf requires Premium; paste-sync is the free path.)
-
-### v2026.08.3 (2026-08-29)
-- Email switched to chenshuh@usc.edu (school email only)
-- ChatDKU: ROUGE/BLEU replaced with deployment outcome (deployed at DKU, recognized by multiple offices, documented as Signature Work)
-- Merged Projects + Publications into one "Projects & Publications" section
