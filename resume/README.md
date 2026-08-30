@@ -17,6 +17,10 @@ Source of truth for Chenshuhao (Cody) Qin's English resume (LaTeX, one page).
 
 ## Changelog
 
+### v2026.08.5 (2026-08-29)
+- Skills taxonomy cleaned up: Languages / AI & ML / LLM & Agents / Infrastructure & Distributed Systems
+- Ray moved to the front of the distributed-systems line; databases consolidated into infrastructure
+
 ### v2026.08.4 (2026-08-29)
 - Added "agent harness" positioning: Data-Juicer Agents identified as an open-source agent harness (bullet 1); Skills line now "Agent Harness & Context Engineering"
 
