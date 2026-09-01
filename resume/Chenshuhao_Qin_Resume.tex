@@ -97,7 +97,8 @@
     \textbf{\Huge \scshape Chenshuhao (Cody) Qin} \\ \vspace{3pt}
     \small
     Los Angeles, CA $|$ (213) 922-0925 $|$
-    \href{mailto:cody2363264403@gmail.com}{\underline{cody2363264403@gmail.com}} $|$
+    \href{mailto:chenshuh@usc.edu}{\underline{chenshuh@usc.edu}} $|$
+    \href{https://codyqin.github.io/CodyQin/}{\underline{codyqin.github.io/CodyQin}} $|$
     \href{https://github.com/CodyQin}{\underline{github.com/CodyQin}} $|$
     \href{https://www.linkedin.com/in/chenshuhao-qin/}{\underline{linkedin.com/in/chenshuhao-qin}}
 \end{flushleft}
@@ -123,10 +124,10 @@
 \section{Skills}
  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt, topsep=1pt, parsep=0pt]
     \small{\item{
-     \textbf{Programming}{: Python, TypeScript/JavaScript, Java, SQL (MySQL, PostgreSQL), Swift, C} \\
+     \textbf{Languages}{: Python, TypeScript/JavaScript, Java, SQL, Swift, C} \\
      \textbf{AI \& Machine Learning}{: PyTorch, TensorFlow, LoRA Fine-tuning, Prompt Engineering, Hugging Face, Pandas, NumPy} \\
-     \textbf{LLM \& Agents}{: LLM Agents (AgentScope, LangChain, LlamaIndex), Retrieval-Augmented Generation (RAG), Model Serving (vLLM), Embeddings \& Vector Search (Milvus), Ray} \\
-     \textbf{Infrastructure \& Tools}{: Kubernetes, Docker, CI/CD, Git, Linux, REST APIs (FastAPI, Flask), React, Redis, Object Storage (OSS/S3), AWS, PyTest}
+     \textbf{LLM \& Agents}{: LLM Agents (AgentScope, LangChain, LlamaIndex), Agent Harness \& Context Engineering, Retrieval-Augmented Generation (RAG), Model Serving (vLLM), Vector Search (Milvus)} \\
+     \textbf{Infrastructure \& Distributed Systems}{: Ray, Kubernetes, Docker, MySQL, PostgreSQL, Redis, REST APIs (FastAPI, Flask), React, Linux, Git, CI/CD, Object Storage (OSS/S3), AWS, PyTest}
     }}
  \end{itemize}
 
@@ -138,16 +139,16 @@
       {Alibaba Cloud (Top-4 Global Cloud Provider)}{Hangzhou, China}
       {AI Engineer Intern}{Jun. 2026 -- Aug. 2026}
       \resumeItemListStart
-        \resumeItem{Collaborated with Alibaba's \textbf{Tongyi Lab} to productize \textbf{Data-Juicer Agents} into natural-language-driven multimodal data pipelines (cleaning, filtering, deduplication) for the broader \textbf{Qwen} ecosystem, replacing script-heavy workflows on the Apsara Data Lake platform.}
+        \resumeItem{Collaborated with Alibaba's \textbf{Tongyi Lab} to productize \textbf{Data-Juicer Agents} --- an open-source \textbf{agent harness} --- into natural-language-driven multimodal data pipelines (cleaning, filtering, deduplication) for the broader \textbf{Qwen} ecosystem, replacing script-heavy workflows on the Apsara Data Lake platform.}
         \resumeItem{Built an agent-to-\textbf{Ray} distributed execution pipeline over private-cloud object storage (OSS) and Kubernetes --- \textbf{2,793 records, 16 operators, $\sim$5 minutes} --- and landed the core capability upstream through a merged PR.}
         \resumeItem{Designed a three-layer context-control architecture (tool-output compaction, memory compression, hard token budgets) cutting single-tool context payloads by \textbf{82\%} and enabling stable multi-turn agents on 30k-token models.}
         \resumeItem{Shipped a full-stack agent workspace (\textbf{React / FastAPI / MySQL}, REST APIs) with persistent sessions, execution tracing, conversation rollback, and multi-instance isolation; delivered \textbf{4 production container-image releases}.}
-        \resumeItem{Contributed \textbf{5 merged PRs} (PyTest unit coverage, CI green) to the 7k$\star$ Data-Juicer open-source ecosystem across multimodal ingestion, distributed Ray execution, and context optimization; 1 enhancement proposal adopted by maintainers.}
+        \resumeItem{Contributed \href{https://github.com/datajuicer/data-juicer-agents/pulls?q=is\string:pr+author\string:CodyQin}{\textbf{5 merged PRs}} (PyTest unit coverage, CI green) to the 7k$\star$ Data-Juicer open-source ecosystem across multimodal ingestion, distributed Ray execution, and context optimization; 1 enhancement proposal adopted by maintainers.}
       \resumeItemListEnd
 
     \resumeSubheading
       {Blueberry AI}{Burlingame, CA (Remote)}
-      {AI Engineer Intern}{Nov. 2025 -- Dec. 2025}
+      {AI Engineer Intern}{Nov. 2025 -- Jan. 2026}
       \resumeParagraph{Built a \textbf{Milvus + MySQL} feature-extraction and auto-tagging pipeline batch-indexing \textbf{200K+ images} for landmark / IP / SKU retrieval; benchmarked \textbf{DINOv3, Qwen-VL, and BGE-VL} under a unified recall / precision / latency framework for private deployment; delivered a YOLO + \textbf{Milvus} vector search + Gradio retrieval POC validated for commercial use.}
 
     \resumeSubheading
@@ -163,20 +164,19 @@
   \resumeSubHeadingListEnd
 
 %-----------PROJECTS-----------
-\section{Projects}
+\section{Projects \& Publications}
   \resumeSubHeadingListStart
 
     \resumeProjectHeading
       {\textbf{ChatDKU --- RAG Campus Q\&A Assistant} $|$ \emph{Python, LlamaIndex, LangChain, Redis}}{Jul. 2024 -- May. 2025}
-      \resumeParagraph{Co-founded a university-adopted \textbf{Retrieval-Augmented Generation (RAG)} Q\&A agent indexing \textbf{12,000+ webpages} over a privately deployed LLM; implemented \textbf{Hybrid Search (BM25 + vectors)}, \textbf{HyDE}, multi-level \textbf{Redis} caching, and \textbf{SSO} web deployment, attaining \textbf{ROUGE 81.1\% / BLEU 60.2\%}; authored the design as a DKU Signature Work.}
+      \resumeParagraph{Co-founded a university-adopted \textbf{Retrieval-Augmented Generation (RAG)} Q\&A agent indexing \textbf{12,000+ webpages} over a privately deployed LLM; implemented \textbf{Hybrid Search (BM25 + vectors)}, \textbf{HyDE}, multi-level \textbf{Redis} caching, and \textbf{SSO} web deployment; the system was officially deployed at DKU and recognized by multiple university offices, documented as a DKU Signature Work.}
 
   \resumeSubHeadingListEnd
 
-%-----------PUBLICATIONS-----------
-\section{Publications}
- \begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt, topsep=1pt, parsep=0pt]
+  \vspace{2pt}
+  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt, topsep=1pt, parsep=0pt]
     \small{\item{
-     \emph{Privacy-Preserving Room Occupancy Estimation Using Federated Analytics of BLE Packets} --- \textbf{ACM SenSys 2024} (Demo Track, second author), pp. 889--890; \textbf{95\%} real-world accuracy via federated learning over BLE.\vspace{-3pt}
+     \textbf{Publication}: \emph{Privacy-Preserving Room Occupancy Estimation Using Federated Analytics of BLE Packets} --- \textbf{ACM SenSys 2024} (Demo Track, second author), pp. 889--890; \textbf{95\%} real-world accuracy via federated learning over BLE.\vspace{-3pt}
     }}
  \end{itemize}
 
