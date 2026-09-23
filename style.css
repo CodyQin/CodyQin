@@ -100,6 +100,9 @@ img { max-width: 100%; display: block; }
   width: 100%; aspect-ratio: 1; object-fit: cover;
   border-radius: 24px; border: 1px solid var(--border); box-shadow: var(--shadow);
 }
+.side-photo-trigger { display: block; padding: 0; border: 0; background: none; cursor: zoom-in; width: 100%; }
+.side-photo-trigger .side-photo { transition: transform .2s ease; }
+.side-photo-trigger:hover .side-photo { transform: scale(1.015); }
 .side-name { font-family: var(--font-display); font-size: 24px; font-weight: 600; margin: 18px 0 2px; line-height: 1.25; letter-spacing: -.01em; }
 .side-cn { font-size: 15px; color: var(--text); font-weight: 600; margin: 0 0 12px; }
 .side-cn .pron { font-size: 11.5px; color: var(--text-faint); font-weight: 500; margin-left: 6px; letter-spacing: .03em; }
@@ -147,13 +150,10 @@ img { max-width: 100%; display: block; }
 .logo-chip.monogram { font-weight: 700; font-size: 15px; color: #fff; background: linear-gradient(135deg, #4f46e5, #8b5cf6); border: none; }
 
 /* ============ About ============ */
-.about-grid { display: grid; grid-template-columns: 1fr 220px; gap: 26px; align-items: start; }
+.about-text { max-width: 800px; }
 .about-text p { margin: 0 0 12px; color: var(--text-soft); font-size: 14.5px; }
 .about-text p:last-child { margin-bottom: 0; }
 .about-text strong { color: var(--text); font-weight: 600; }
-.about-photo { margin: 0; }
-.about-photo img { border-radius: 14px; border: 1px solid var(--border); box-shadow: var(--shadow); }
-.about-photo figcaption { font-size: 12px; color: var(--text-faint); margin-top: 6px; text-align: center; }
 
 /* ============ Education ============ */
 .edu-item {
@@ -282,6 +282,92 @@ img { max-width: 100%; display: block; }
 .award-note { color: var(--text-faint); font-size: 12.5px; }
 .award-year { margin-left: auto; color: var(--text-faint); font-size: 12.5px; font-variant-numeric: tabular-nums; }
 
+/* ---- WWDC23 flagship award card ---- */
+.wwdc-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px 18px; margin-bottom: 16px; box-shadow: var(--shadow);
+}
+.wwdc-head { display: flex; gap: 14px; align-items: center; margin-bottom: 12px; }
+.wwdc-titles { flex: 1; }
+.wwdc-titles h3 { margin: 0; font-size: 16px; font-weight: 650; }
+.wwdc-head .cert-date { flex: none; padding-top: 2px; }
+.wwdc-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.wwdc-tile {
+  position: relative; overflow: hidden; padding: 0; border: 1px solid var(--border);
+  border-radius: 10px; background: var(--bg-subtle); cursor: zoom-in;
+}
+.wwdc-tile img { width: 100%; height: 200px; object-fit: cover; transition: transform .25s ease; }
+.wwdc-tile:hover img { transform: scale(1.03); }
+.tile-cap {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 22px 10px 8px; font-size: 11.5px; font-weight: 600; color: #fff; text-align: left;
+  background: linear-gradient(transparent, rgba(0,0,0,.62));
+}
+
+/* ---- Photo strip inside experience cards ---- */
+.xp-photos { display: grid; gap: 10px; margin-top: 14px; }
+.xp-photo {
+  position: relative; overflow: hidden; padding: 0; border: 1px solid var(--border);
+  border-radius: 10px; background: var(--bg-subtle); cursor: zoom-in;
+}
+.xp-photo img { width: 100%; height: 210px; object-fit: cover; transition: transform .25s ease; }
+.xp-photo:hover img { transform: scale(1.02); }
+.xp-photo-cap {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 24px 12px 9px; font-size: 12px; font-weight: 600; color: #fff; text-align: left;
+  background: linear-gradient(transparent, rgba(0,0,0,.62));
+}
+.xp-photo-cap em { font-weight: 400; opacity: .85; }
+
+/* ---- Life / Beyond the Code mosaic ---- */
+.life-intro {
+  margin: -6px 0 18px; color: var(--text-soft); font-size: 14px;
+  font-family: var(--font-display); font-style: italic;
+}
+.life-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 232px; gap: 12px; }
+.life-tile {
+  position: relative; overflow: hidden; padding: 0; border: 1px solid var(--border);
+  border-radius: 12px; background: var(--bg-subtle); cursor: zoom-in;
+}
+.life-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+.life-tile:hover img { transform: scale(1.035); }
+.life-tile.tall { grid-row: span 2; }
+.life-tile.wide { grid-column: span 2; }
+.life-tile.pos-b img { object-position: center 72%; }
+.life-cap {
+  position: absolute; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; gap: 1px;
+  padding: 30px 13px 10px; text-align: left; color: #fff;
+  background: linear-gradient(transparent, rgba(0,0,0,.66));
+}
+.life-cap strong { font-size: 12.5px; font-weight: 650; letter-spacing: .01em; }
+.life-cap em { font-size: 11.5px; font-weight: 400; color: rgba(255,255,255,.88); font-family: var(--font-display); }
+
+/* ---- Lightbox ---- */
+button.lb, a.lb { cursor: zoom-in; }
+button.lb { background: none; border: 0; padding: 0; }
+.lightbox {
+  position: fixed; inset: 0; z-index: 100; display: none; place-items: center;
+  background: rgba(12,12,14,.9); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+.lightbox.open { display: grid; }
+.lightbox figure { margin: 0; text-align: center; max-width: 92vw; }
+.lightbox img {
+  max-width: 92vw; max-height: 80vh; width: auto; height: auto; margin: 0 auto;
+  border-radius: 10px; box-shadow: 0 24px 70px rgba(0,0,0,.55);
+}
+.lightbox figcaption { margin-top: 14px; color: #e7e7ea; font-size: 13.5px; }
+.lb-btn {
+  position: fixed; z-index: 101; display: grid; place-items: center;
+  width: 42px; height: 42px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.22); background: rgba(255,255,255,.08); color: #fff;
+  font-size: 22px; line-height: 1; cursor: pointer; transition: background .15s ease;
+}
+.lb-btn:hover { background: rgba(255,255,255,.2); }
+.lb-close { top: 20px; right: 24px; }
+.lb-prev { left: 18px; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 18px; top: 50%; transform: translateY(-50%); }
+@media (max-width: 720px) { .lb-prev { left: 8px; } .lb-next { right: 8px; } }
+
 /* ============ Projects ============ */
 .proj-featured {
   display: grid; grid-template-columns: 1fr 1.15fr; gap: 22px; align-items: center;
@@ -316,7 +402,8 @@ img { max-width: 100%; display: block; }
 .proj-card p strong { color: var(--text); font-weight: 600; }
 .proj-link { font-weight: 600; font-size: 13.5px; margin-right: 14px; }
 .proj-photo-card { grid-column: 1 / -1; display: grid; grid-template-columns: 280px 1fr; gap: 18px; align-items: center; }
-.proj-photo { border-radius: 10px; border: 1px solid var(--border); max-height: 200px; object-fit: cover; width: 100%; }
+.proj-photo-trigger { display: block; padding: 0; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--bg-subtle); cursor: zoom-in; }
+.proj-photo { border-radius: 0; border: none; max-height: 200px; object-fit: cover; width: 100%; }
 .proj-photo-body h3 { margin-bottom: 2px; }
 .proj-photo-body p { margin: 8px 0 10px; }
 
@@ -351,12 +438,21 @@ img { max-width: 100%; display: block; }
   .side-status { justify-content: center; }
   .side-links { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 4px; }
   .side-cv { width: auto; }
-  .about-grid { grid-template-columns: 1fr; }
-  .about-photo { max-width: 320px; }
   .oss-grid, .proj-grid, .cert-grid { grid-template-columns: 1fr; }
   .proj-featured { grid-template-columns: 1fr; }
   .pub-card.with-thumb { grid-template-columns: 1fr; }
   .proj-photo-card { grid-template-columns: 1fr; }
   .xp-when { margin-left: 58px; text-align: left; white-space: normal; }
   .nav-links { display: none; }
+  .wwdc-strip { grid-template-columns: 1fr 1fr; }
+  .wwdc-tile img { height: 170px; }
+  .life-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 205px; }
+  .life-tile.wide { grid-column: span 1; }
+  .life-tile.tall { grid-row: span 2; }
+  .xp-photo img { height: 175px; }
+}
+@media (max-width: 560px) {
+  .life-grid { grid-template-columns: 1fr; grid-auto-rows: 235px; }
+  .life-cap em { display: none; }
+  .lightbox figcaption { font-size: 12px; padding: 0 12px; }
 }

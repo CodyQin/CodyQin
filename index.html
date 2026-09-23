@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chenshuhao (Cody) Qin 秦陈书豪 — AI Engineer</title>
   <meta name="description" content="Chenshuhao (Cody) Qin — MS CS @ USC '27, Duke/DKU '25. AI systems, cloud infrastructure, and data platforms. Alibaba Cloud (Agent Infra) · Blueberry AI · Tsinghua · G-bits · WWDC23 Scholar.">
-  <link rel="icon" type="image/png" href="assets/profile.png">
+  <link rel="icon" type="image/png" href="assets/avatar.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&display=swap" rel="stylesheet">
@@ -23,6 +23,7 @@
         <a href="#publications">Publications</a>
         <a href="#awards">Awards</a>
         <a href="#projects">Projects</a>
+        <a href="#life">Life</a>
       </div>
       <div class="nav-actions">
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">🌙</button>
@@ -34,7 +35,9 @@
   <div class="layout" id="top">
     <!-- ==================== LEFT SIDEBAR ==================== -->
     <aside class="sidebar">
-      <img class="side-photo" src="assets/profile.png" alt="Chenshuhao (Cody) Qin" width="280" height="282">
+      <button class="lb side-photo-trigger" data-full="assets/avatar.png" data-caption="Illustrated avatar — winter 2026" aria-label="Enlarge avatar">
+        <img class="side-photo" src="assets/avatar.png" alt="Chenshuhao (Cody) Qin — illustrated avatar" width="560" height="560">
+      </button>
       <h1 class="side-name">Chenshuhao (Cody) Qin</h1>
       <p class="side-cn">秦陈书豪 <span class="pron">/ CHIN-CHEN-SHOO-HOW /</span></p>
       <p class="side-credential">MS, Computer Science · USC ’27<br>Duke / DKU ’25</p>
@@ -58,17 +61,11 @@
       <!-- ============ ABOUT ============ -->
       <section id="about" class="sec">
         <h2 class="sec-title">About</h2>
-        <div class="about-grid">
-          <div class="about-text">
-            <p>I'm Chenshuhao (Cody) Qin — a Computer Science graduate student at <strong>USC</strong> and a Duke Kunshan / Duke University alumnus. My interests sit at the intersection of <strong>AI systems, cloud infrastructure, and data platforms</strong>.</p>
-            <p>I recently completed an AI Engineering internship at <strong>Alibaba Cloud</strong> — ranked a <strong>global top-4 cloud service provider</strong> — building agent infrastructure for multimodal data platforms: Kubernetes, distributed Ray execution, and LLM data agents in the <strong>Qwen</strong> ecosystem, with 5 merged PRs in the open-source Data-Juicer ecosystem.</p>
-            <p>Previously I've taken ideas from prototype to production across <strong>healthcare, gaming, energy, and finance</strong>: multimodal retrieval at Blueberry AI, AIGC pipelines at G-bits, grid fault diagnosis at Tsinghua, speech AI at ABC — plus a university-adopted campus AI assistant (ChatDKU) and an Apple WWDC23 Swift Student Challenge win.</p>
-            <p>I'm actively seeking <strong>Summer 2027 internships</strong> in the US — AI Infrastructure, AI Platform Engineering, Distributed Systems, or Applied AI. Reach me at <a href="mailto:chenshuh@usc.edu">chenshuh@usc.edu</a>.</p>
-          </div>
-          <figure class="about-photo">
-            <img src="assets/alibaba-photo.png" alt="At Alibaba Cloud, Hangzhou, 2026" loading="lazy">
-            <figcaption>Alibaba Cloud · Hangzhou · 2026</figcaption>
-          </figure>
+        <div class="about-text">
+          <p>I'm Chenshuhao (Cody) Qin — a Computer Science graduate student at <strong>USC</strong> and a Duke Kunshan / Duke University alumnus. My interests sit at the intersection of <strong>AI systems, cloud infrastructure, and data platforms</strong>.</p>
+          <p>I recently completed an AI Engineering internship at <strong>Alibaba Cloud</strong> — ranked a <strong>global top-4 cloud service provider</strong> — building agent infrastructure for multimodal data platforms: Kubernetes, distributed Ray execution, and LLM data agents in the <strong>Qwen</strong> ecosystem, with 5 merged PRs in the open-source Data-Juicer ecosystem.</p>
+          <p>Previously I've taken ideas from prototype to production across <strong>healthcare, gaming, energy, and finance</strong>: multimodal retrieval at Blueberry AI, AIGC pipelines at G-bits, grid fault diagnosis at Tsinghua, speech AI at ABC — plus a university-adopted campus AI assistant (ChatDKU) and an Apple WWDC23 Swift Student Challenge win.</p>
+          <p>I'm actively seeking <strong>Summer 2027 internships</strong> in the US — AI Infrastructure, AI Platform Engineering, Distributed Systems, or Applied AI. Reach me at <a href="mailto:chenshuh@usc.edu">chenshuh@usc.edu</a>.</p>
         </div>
       </section>
 
@@ -161,6 +158,12 @@
             <li>Contributed <strong>5 merged PRs</strong> to the 7k★ Data-Juicer ecosystem (see <a href="#opensource">Open Source</a>).</li>
           </ul>
           <div class="chips"><span>Agent Harness</span><span>Context Engineering</span><span>Python</span><span>Ray</span><span>Kubernetes</span><span>Docker</span><span>FastAPI</span><span>React</span><span>MySQL</span><span>AgentScope</span><span>Data-Juicer</span></div>
+          <div class="xp-photos">
+            <button class="lb xp-photo" data-full="assets/alibaba-photo.png" data-caption="Team photo · Alibaba Cloud, Hangzhou · 2026">
+              <img src="assets/alibaba-photo.png" alt="Team photo at Alibaba Cloud, Hangzhou, 2026" loading="lazy">
+              <span class="xp-photo-cap">Team photo · Hangzhou · 2026 <em>— click to enlarge</em></span>
+            </button>
+          </div>
         </article>
 
         <article class="xp-card reveal">
@@ -271,18 +274,40 @@
 
       <!-- ============ AWARDS ============ -->
       <section id="awards" class="sec">
-        <h2 class="sec-title">Awards &amp; Honors <span class="title-note">· click to view certificates</span></h2>
+        <h2 class="sec-title">Awards &amp; Honors <span class="title-note">· click any image to enlarge</span></h2>
+
+        <!-- WWDC23 flagship card: announcement + winner's package -->
+        <article class="wwdc-card reveal">
+          <div class="wwdc-head">
+            <span class="logo-chip"><img src="assets/logos/apple.jpg" alt="Apple" loading="lazy"></span>
+            <div class="wwdc-titles">
+              <h3>Apple WWDC23 Swift Student Challenge — Winner</h3>
+              <div class="cert-note">One of 13 winners in China · the sole winner from Jiangsu Province · Ferryman Puzzle (SwiftUI)</div>
+            </div>
+            <div class="cert-date">2023</div>
+          </div>
+          <div class="wwdc-strip">
+            <button class="lb wwdc-tile" data-full="assets/awards/wwdc23.jpg" data-caption="Winner announcement — Apple WWDC23 Swift Student Challenge">
+              <img src="assets/awards/wwdc23.jpg" alt="WWDC23 Swift Student Challenge winner announcement" loading="lazy">
+              <span class="tile-cap">Winner announcement</span>
+            </button>
+            <button class="lb wwdc-tile" data-full="assets/awards/wwdc23-letter.jpg" data-caption="The congratulations letter from Apple — WWDC23 winner's package">
+              <img src="assets/awards/wwdc23-letter.jpg" alt="WWDC23 winner letter from Apple" loading="lazy">
+              <span class="tile-cap">The letter from Apple</span>
+            </button>
+            <button class="lb wwdc-tile" data-full="assets/awards/wwdc23-hoodie.jpg" data-caption="Exclusive WWDC23 winner hoodie — not sold anywhere">
+              <img src="assets/awards/wwdc23-hoodie.jpg" alt="Exclusive WWDC23 winner hoodie" loading="lazy">
+              <span class="tile-cap">Exclusive winner hoodie</span>
+            </button>
+            <button class="lb wwdc-tile" data-full="assets/awards/wwdc23-pins.jpg" data-caption="WWDC23 winner's package — collection pins &amp; AirPods Pro">
+              <img src="assets/awards/wwdc23-pins.jpg" alt="WWDC23 winner pins and AirPods Pro" loading="lazy">
+              <span class="tile-cap">Pins &amp; AirPods Pro</span>
+            </button>
+          </div>
+        </article>
 
         <div class="cert-grid">
-          <a class="cert-card reveal" href="assets/awards/wwdc23.jpg" target="_blank" rel="noopener">
-            <img src="assets/awards/wwdc23.jpg" alt="WWDC23 Swift Student Challenge winner announcement" loading="lazy">
-            <div class="cert-body">
-              <div class="cert-name">Apple WWDC23 Swift Student Challenge — Winner</div>
-              <div class="cert-note">one of 13 in China · the sole winner from Jiangsu Province</div>
-              <div class="cert-date">2023</div>
-            </div>
-          </a>
-          <a class="cert-card reveal" href="assets/awards/apple-ucorp.jpg" target="_blank" rel="noopener">
+          <a class="cert-card reveal lb" href="assets/awards/apple-ucorp.jpg">
             <img src="assets/awards/apple-ucorp.jpg" alt="U-Corp @ Apple certificate of achievement" loading="lazy">
             <div class="cert-body">
               <div class="cert-name">Certificate of Achievement — U-Corp @ Apple · iOS Project</div>
@@ -290,7 +315,7 @@
               <div class="cert-date">2023 Spring</div>
             </div>
           </a>
-          <a class="cert-card reveal" href="assets/awards/damo.jpg" target="_blank" rel="noopener">
+          <a class="cert-card reveal lb" href="assets/awards/damo.jpg">
             <img src="assets/awards/damo.jpg" alt="AI Trainer (Advanced) certificate from DAMO" loading="lazy">
             <div class="cert-body">
               <div class="cert-name">AI Trainer Certificate (Advanced) — Intelligent DAMO</div>
@@ -298,7 +323,7 @@
               <div class="cert-date">Issued Jun 2025 · expired Jun 2026</div>
             </div>
           </a>
-          <a class="cert-card reveal" href="assets/awards/edgeiot-cert.jpg" target="_blank" rel="noopener">
+          <a class="cert-card reveal lb" href="assets/awards/edgeiot-cert.jpg">
             <img src="assets/awards/edgeiot-cert.jpg" alt="Jiangsu Provincial Innovation & Entrepreneurship Training Program completion certificate" loading="lazy">
             <div class="cert-body">
               <div class="cert-name">Provincial Innovation &amp; Entrepreneurship Program — Project Completion</div>
@@ -306,7 +331,7 @@
               <div class="cert-date">Completed Jun 2025 · ¥20,000 grant project</div>
             </div>
           </a>
-          <a class="cert-card reveal" href="assets/awards/ambassador.jpg" target="_blank" rel="noopener">
+          <a class="cert-card reveal lb" href="assets/awards/ambassador.jpg">
             <img src="assets/awards/ambassador.jpg" alt="DKU Student Ambassador certificate" loading="lazy">
             <div class="cert-body">
               <div class="cert-name">Student Ambassador — Duke Kunshan University</div>
@@ -349,7 +374,7 @@
             <p class="proj-meta">DKU Innovation &amp; Entrepreneurship Initiative</p>
             <p>Scalable campus IoT infrastructure for real-time room-occupancy data: BLE sensing evolved into a hardware + software framework with OTA updates, helping students find free team rooms. Federated-learning occupancy estimation hit <strong>95%</strong> accuracy → ACM SenSys 2024 demo. Ran as a <strong>Jiangsu Provincial Innovation &amp; Entrepreneurship Training Program</strong> project (¥20,000 grant; completion certified Jun 2025).</p>
             <a class="proj-link" href="https://ine.dukekunshan.edu.cn/project/edge-iot/" target="_blank" rel="noopener">Project page →</a>
-            <a class="proj-link" href="assets/awards/edgeiot-cert.jpg" target="_blank" rel="noopener">Certificate →</a>
+            <a class="proj-link lb" href="assets/awards/edgeiot-cert.jpg">Certificate →</a>
             <div class="chips"><span>Federated Learning</span><span>BLE</span><span>IoT</span></div>
           </article>
 
@@ -363,7 +388,9 @@
           </article>
 
           <article class="proj-card reveal proj-photo-card">
-            <img class="proj-photo" src="assets/ios-club-photo.jpg" alt="iOS Club activity at DKU" loading="lazy">
+            <button class="lb proj-photo-trigger" data-full="assets/ios-club-photo.jpg" data-caption="iOS Club @ DKU — activity photo (I'm the one in green)" aria-label="Enlarge iOS Club photo">
+              <img class="proj-photo" src="assets/ios-club-photo.jpg" alt="iOS Club activity at DKU" loading="lazy">
+            </button>
             <div class="proj-photo-body">
               <h3>iOS Club @ DKU</h3>
               <p class="proj-meta">U-Corp Innovation Lab × Apple · 2022 – 2023</p>
@@ -371,6 +398,38 @@
               <a class="proj-link" href="https://ine.dukekunshan.edu.cn/project/u-corp-apple-ios-club/" target="_blank" rel="noopener">Project page →</a>
             </div>
           </article>
+        </div>
+      </section>
+
+      <!-- ============ LIFE ============ -->
+      <section id="life" class="sec">
+        <h2 class="sec-title">Beyond the Code <span class="title-note">· click any photo to enlarge</span></h2>
+        <p class="life-intro">The background processes — Formula 1, a guitar, one very photogenic chapel, and proof that the car obsession started early.</p>
+        <div class="life-grid">
+          <button class="lb life-tile tall" data-full="assets/life/duke-chapel.jpg" data-caption="Duke Chapel · Durham, NC — the nave">
+            <img src="assets/life/duke-chapel.jpg" alt="Standing in the nave of Duke Chapel" loading="lazy">
+            <span class="life-cap"><strong>Duke Chapel · Durham, NC</strong><em>My favorite corridor on any campus — gothic, quiet, notification-free.</em></span>
+          </button>
+          <button class="lb life-tile wide" data-full="assets/life/f1-shanghai.jpg" data-caption="Formula 1 Chinese Grand Prix · Shanghai International Circuit">
+            <img src="assets/life/f1-shanghai.jpg" alt="Formula 1 Chinese Grand Prix in Shanghai" loading="lazy">
+            <span class="life-cap"><strong>F1 Chinese Grand Prix · Shanghai</strong><em>Certified Tifosi — attendance verified, voice lost.</em></span>
+          </button>
+          <button class="lb life-tile tall" data-full="assets/life/music-stage.jpg" data-caption="On stage at a music festival — guitar &amp; vocals">
+            <img src="assets/life/music-stage.jpg" alt="Performing guitar on stage at a music festival" loading="lazy">
+            <span class="life-cap"><strong>Music festival · on stage</strong><em>Guitar &amp; vocals — my favorite kind of live deployment.</em></span>
+          </button>
+          <button class="lb life-tile wide" data-full="assets/life/graduation.jpg" data-caption="Undergraduate graduation · Duke Kunshan University, Class of 2025">
+            <img src="assets/life/graduation.jpg" alt="Undergraduate graduation photo" loading="lazy">
+            <span class="life-cap"><strong>Class of 2025 · DKU × Duke</strong><em>v25.0 shipped — dual degree, four years in production.</em></span>
+          </button>
+          <button class="lb life-tile wide pos-b" data-full="assets/life/childhood-jeep.jpg" data-caption="First test drive — plastic jeep, plaza circuit">
+            <img src="assets/life/childhood-jeep.jpg" alt="Childhood photo driving a toy jeep" loading="lazy">
+            <span class="life-cap"><strong>The first test drive</strong><em>Plaza circuit, plastic jeep, top speed 0.5 km/h.</em></span>
+          </button>
+          <button class="lb life-tile wide pos-b" data-full="assets/life/childhood-fleet.jpg" data-caption="The original fleet — my childhood car collection">
+            <img src="assets/life/childhood-fleet.jpg" alt="Childhood photo with toy car collection" loading="lazy">
+            <span class="life-cap"><strong>The original fleet</strong><em>Before distributed clusters, I orchestrated toy ones.</em></span>
+          </button>
         </div>
       </section>
 
