@@ -65,10 +65,8 @@
 
 // Lightbox: every .lb element (button or link) opens an enlargable overlay
 // with keyboard + prev/next navigation across all .lb items on the page.
+// Uses event delegation so elements added later (filmstrip clones) work too.
 (function () {
-  const items = [...document.querySelectorAll(".lb")];
-  if (!items.length) return;
-
   const box = document.createElement("div");
   box.className = "lightbox";
   box.setAttribute("role", "dialog");
@@ -83,8 +81,7 @@
 
   const img = box.querySelector("img");
   const cap = box.querySelector("figcaption");
-  const prevBtn = box.querySelector(".lb-prev");
-  const nextBtn = box.querySelector(".lb-next");
+  const items = () => [...document.querySelectorAll(".lb")];
   let cur = -1;
 
   const src = (t) => t.dataset.full || t.getAttribute("href");
@@ -92,30 +89,33 @@
     (t.querySelector("img") && t.querySelector("img").alt) || t.dataset.caption || "";
 
   function show(i) {
-    cur = ((i % items.length) + items.length) % items.length;
-    const t = items[cur];
+    const list = items();
+    cur = ((i % list.length) + list.length) % list.length;
+    const t = list[cur];
     img.src = src(t);
     img.alt = alt(t);
     cap.textContent = t.dataset.caption || "";
     box.classList.add("open");
+    document.documentElement.classList.add("lb-open");
     document.body.style.overflow = "hidden";
     box.querySelector(".lb-close").focus();
   }
   function close() {
     box.classList.remove("open");
+    document.documentElement.classList.remove("lb-open");
     img.src = "";
     document.body.style.overflow = "";
   }
 
-  items.forEach((t, i) =>
-    t.addEventListener("click", (e) => {
-      e.preventDefault();
-      show(i);
-    })
-  );
+  document.addEventListener("click", (e) => {
+    const t = e.target.closest(".lb");
+    if (!t) return;
+    e.preventDefault();
+    show(items().indexOf(t));
+  });
   box.querySelector(".lb-close").addEventListener("click", close);
-  prevBtn.addEventListener("click", () => show(cur - 1));
-  nextBtn.addEventListener("click", () => show(cur + 1));
+  box.querySelector(".lb-prev").addEventListener("click", () => show(cur - 1));
+  box.querySelector(".lb-next").addEventListener("click", () => show(cur + 1));
   box.addEventListener("click", (e) => {
     if (e.target === box) close();
   });
@@ -125,4 +125,91 @@
     else if (e.key === "ArrowLeft") show(cur - 1);
     else if (e.key === "ArrowRight") show(cur + 1);
   });
+})();
+
+// Life filmstrip: auto-scrolls to the right in a seamless loop, pauses on
+// hover and while the lightbox is open, and can be dragged to browse.
+(function () {
+  const reel = document.getElementById("lifeReel");
+  if (!reel) return;
+  const track = reel.querySelector(".reel-track");
+  const set = reel.querySelector(".reel-set");
+  if (!track || !set) return;
+
+  // duplicate the set for a seamless loop; clones stay out of tab order
+  const clone = set.cloneNode(true);
+  clone.setAttribute("aria-hidden", "true");
+  clone.querySelectorAll("button").forEach((b) => b.setAttribute("tabindex", "-1"));
+  track.appendChild(clone);
+
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const speed = 0.5; // px per frame (~30px/s)
+  let setW = 0, x = 0, paused = false, dragging = false;
+  let startX = 0, startOffset = 0, moved = 0;
+
+  const measure = () => {
+    setW = set.getBoundingClientRect().width;
+    x = wrap(x);
+    render();
+  };
+  const wrap = (v) => {
+    if (!setW) return v;
+    while (v > 0) v -= setW;
+    while (v <= -setW) v += setW;
+    return v;
+  };
+  const render = () => { track.style.transform = "translate3d(" + x + "px,0,0)"; };
+
+  // x lives in (-setW, 0]: the duplicate set feeds in from the left as the
+  // track travels right, so the loop never shows an empty edge.
+  const init = () => { setW = set.getBoundingClientRect().width; x = -setW; render(); };
+  if (document.readyState === "complete") init();
+  else window.addEventListener("load", init);
+  set.querySelectorAll("img").forEach((im) => {
+    if (!im.complete) im.addEventListener("load", init, { once: true });
+  });
+  window.addEventListener("resize", measure);
+
+  const blocked = () =>
+    dragging || paused || reduce ||
+    document.documentElement.classList.contains("lb-open");
+
+  (function tick() {
+    if (!blocked()) { x = wrap(x + speed); render(); }
+    requestAnimationFrame(tick);
+  })();
+
+  reel.addEventListener("mouseenter", () => { paused = true; });
+  reel.addEventListener("mouseleave", () => { paused = false; });
+
+  track.addEventListener("pointerdown", (e) => {
+    dragging = true; moved = 0;
+    startX = e.clientX; startOffset = x;
+    track.classList.add("dragging");
+    try { track.setPointerCapture(e.pointerId); } catch (_) {}
+  });
+  track.addEventListener("pointermove", (e) => {
+    if (!dragging) return;
+    const dx = e.clientX - startX;
+    moved = Math.max(moved, Math.abs(dx));
+    x = wrap(startOffset + dx);
+    render();
+  });
+  const endDrag = (e) => {
+    if (!dragging) return;
+    dragging = false;
+    track.classList.remove("dragging");
+    try { track.releasePointerCapture(e.pointerId); } catch (_) {}
+  };
+  track.addEventListener("pointerup", endDrag);
+  track.addEventListener("pointercancel", endDrag);
+
+  // a drag should not end up as a click on a photo
+  reel.addEventListener("click", (e) => {
+    if (moved > 6) {
+      e.stopPropagation();
+      e.preventDefault();
+      moved = 0;
+    }
+  }, true);
 })();

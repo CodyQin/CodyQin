@@ -35,9 +35,7 @@
   <div class="layout" id="top">
     <!-- ==================== LEFT SIDEBAR ==================== -->
     <aside class="sidebar">
-      <button class="lb side-photo-trigger" data-full="assets/avatar.png" data-caption="Illustrated avatar — winter 2026" aria-label="Enlarge avatar">
-        <img class="side-photo" src="assets/avatar.png" alt="Chenshuhao (Cody) Qin — illustrated avatar" width="560" height="560">
-      </button>
+      <img class="side-photo" src="assets/avatar.png" alt="Chenshuhao (Cody) Qin — illustrated avatar" width="640" height="640">
       <h1 class="side-name">Chenshuhao (Cody) Qin</h1>
       <p class="side-cn">秦陈书豪 <span class="pron">/ CHIN-CHEN-SHOO-HOW /</span></p>
       <p class="side-credential">MS, Computer Science · USC ’27<br>Duke / DKU ’25</p>
@@ -141,7 +139,8 @@
       <section id="experience" class="sec">
         <h2 class="sec-title">Experience</h2>
 
-        <article class="xp-card reveal">
+        <article class="xp-card reveal has-photo">
+          <div class="xp-main">
           <div class="xp-head">
             <span class="logo-chip"><img src="assets/logos/alibaba.jpg" alt="Alibaba Cloud" loading="lazy"></span>
             <div class="xp-titles">
@@ -158,12 +157,13 @@
             <li>Contributed <strong>5 merged PRs</strong> to the 7k★ Data-Juicer ecosystem (see <a href="#opensource">Open Source</a>).</li>
           </ul>
           <div class="chips"><span>Agent Harness</span><span>Context Engineering</span><span>Python</span><span>Ray</span><span>Kubernetes</span><span>Docker</span><span>FastAPI</span><span>React</span><span>MySQL</span><span>AgentScope</span><span>Data-Juicer</span></div>
-          <div class="xp-photos">
-            <button class="lb xp-photo" data-full="assets/alibaba-photo.png" data-caption="Team photo · Alibaba Cloud, Hangzhou · 2026">
-              <img src="assets/alibaba-photo.png" alt="Team photo at Alibaba Cloud, Hangzhou, 2026" loading="lazy">
-              <span class="xp-photo-cap">Team photo · Hangzhou · 2026 <em>— click to enlarge</em></span>
-            </button>
           </div>
+          <figure class="xp-fig">
+            <button class="lb" data-full="assets/alibaba-photo.png" data-caption="Team photo · Alibaba Cloud, Hangzhou · 2026" aria-label="Enlarge team photo">
+              <img src="assets/alibaba-photo.png" alt="Team photo at Alibaba Cloud, Hangzhou, 2026" loading="lazy">
+            </button>
+            <figcaption>Team photo · Hangzhou · 2026</figcaption>
+          </figure>
         </article>
 
         <article class="xp-card reveal">
@@ -403,33 +403,37 @@
 
       <!-- ============ LIFE ============ -->
       <section id="life" class="sec">
-        <h2 class="sec-title">Beyond the Code <span class="title-note">· click any photo to enlarge</span></h2>
+        <h2 class="sec-title">Beyond the Code <span class="title-note">· hover to pause · drag to browse · click to enlarge</span></h2>
         <p class="life-intro">The background processes — Formula 1, a guitar, one very photogenic chapel, and proof that the car obsession started early.</p>
-        <div class="life-grid">
-          <button class="lb life-tile tall" data-full="assets/life/duke-chapel.jpg" data-caption="Duke Chapel · Durham, NC — the nave">
-            <img src="assets/life/duke-chapel.jpg" alt="Standing in the nave of Duke Chapel" loading="lazy">
-            <span class="life-cap"><strong>Duke Chapel · Durham, NC</strong><em>My favorite corridor on any campus — gothic, quiet, notification-free.</em></span>
-          </button>
-          <button class="lb life-tile wide" data-full="assets/life/f1-shanghai.jpg" data-caption="Formula 1 Chinese Grand Prix · Shanghai International Circuit">
-            <img src="assets/life/f1-shanghai.jpg" alt="Formula 1 Chinese Grand Prix in Shanghai" loading="lazy">
-            <span class="life-cap"><strong>F1 Chinese Grand Prix · Shanghai</strong><em>Certified Tifosi — attendance verified, voice lost.</em></span>
-          </button>
-          <button class="lb life-tile tall" data-full="assets/life/music-stage.jpg" data-caption="On stage at a music festival — guitar &amp; vocals">
-            <img src="assets/life/music-stage.jpg" alt="Performing guitar on stage at a music festival" loading="lazy">
-            <span class="life-cap"><strong>Music festival · on stage</strong><em>Guitar &amp; vocals — my favorite kind of live deployment.</em></span>
-          </button>
-          <button class="lb life-tile wide" data-full="assets/life/graduation.jpg" data-caption="Undergraduate graduation · Duke Kunshan University, Class of 2025">
-            <img src="assets/life/graduation.jpg" alt="Undergraduate graduation photo" loading="lazy">
-            <span class="life-cap"><strong>Class of 2025 · DKU × Duke</strong><em>v25.0 shipped — dual degree, four years in production.</em></span>
-          </button>
-          <button class="lb life-tile wide pos-b" data-full="assets/life/childhood-jeep.jpg" data-caption="First test drive — plastic jeep, plaza circuit">
-            <img src="assets/life/childhood-jeep.jpg" alt="Childhood photo driving a toy jeep" loading="lazy">
-            <span class="life-cap"><strong>The first test drive</strong><em>Plaza circuit, plastic jeep, top speed 0.5 km/h.</em></span>
-          </button>
-          <button class="lb life-tile wide pos-b" data-full="assets/life/childhood-fleet.jpg" data-caption="The original fleet — my childhood car collection">
-            <img src="assets/life/childhood-fleet.jpg" alt="Childhood photo with toy car collection" loading="lazy">
-            <span class="life-cap"><strong>The original fleet</strong><em>Before distributed clusters, I orchestrated toy ones.</em></span>
-          </button>
+        <div class="reel" id="lifeReel" aria-label="Life photos filmstrip">
+          <div class="reel-track">
+            <div class="reel-set">
+              <button class="lb reel-card" data-full="assets/life/duke-chapel.jpg" data-caption="Duke Chapel · Durham, NC — the nave">
+                <img src="assets/life/duke-chapel.jpg" alt="Standing in the nave of Duke Chapel" loading="lazy">
+                <span class="reel-cap"><strong>Duke Chapel · Durham, NC</strong><em>Gothic, quiet, notification-free.</em></span>
+              </button>
+              <button class="lb reel-card" data-full="assets/life/f1-shanghai.jpg" data-caption="Formula 1 Chinese Grand Prix · Shanghai International Circuit">
+                <img src="assets/life/f1-shanghai.jpg" alt="Formula 1 Chinese Grand Prix in Shanghai" loading="lazy">
+                <span class="reel-cap"><strong>F1 Chinese Grand Prix</strong><em>Certified Tifosi — voice lost.</em></span>
+              </button>
+              <button class="lb reel-card" data-full="assets/life/music-stage.jpg" data-caption="On stage at a music festival — guitar &amp; vocals">
+                <img src="assets/life/music-stage.jpg" alt="Performing guitar on stage at a music festival" loading="lazy">
+                <span class="reel-cap"><strong>Music festival · on stage</strong><em>My favorite live deployment.</em></span>
+              </button>
+              <button class="lb reel-card" data-full="assets/life/graduation.jpg" data-caption="Undergraduate graduation · Duke Kunshan University, Class of 2025">
+                <img src="assets/life/graduation.jpg" alt="Undergraduate graduation photo" loading="lazy">
+                <span class="reel-cap"><strong>Class of 2025 · DKU × Duke</strong><em>v25.0 — dual degree, shipped.</em></span>
+              </button>
+              <button class="lb reel-card" data-full="assets/life/childhood-jeep.jpg" data-caption="First test drive — plastic jeep, plaza circuit">
+                <img src="assets/life/childhood-jeep.jpg" alt="Childhood photo driving a toy jeep" loading="lazy">
+                <span class="reel-cap"><strong>The first test drive</strong><em>Top speed 0.5 km/h.</em></span>
+              </button>
+              <button class="lb reel-card" data-full="assets/life/childhood-fleet.jpg" data-caption="The original fleet — my childhood car collection">
+                <img src="assets/life/childhood-fleet.jpg" alt="Childhood photo with toy car collection" loading="lazy">
+                <span class="reel-cap"><strong>The original fleet</strong><em>Pre-Kubernetes orchestration.</em></span>
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
