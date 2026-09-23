@@ -168,12 +168,13 @@ img { max-width: 100%; display: block; }
   border-radius: var(--radius); padding: 20px 22px; margin-bottom: 14px;
   box-shadow: var(--shadow);
 }
-.xp-card.has-photo { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 20px; align-items: center; }
-.xp-fig { margin: 0; text-align: center; }
+/* photo embedded to the right of the bullets, text wraps around it */
+.xp-fig { float: right; width: 200px; margin: 6px 0 10px 18px; text-align: center; }
 .xp-fig button.lb { display: block; padding: 0; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--bg-subtle); }
 .xp-fig img { display: block; width: 100%; height: auto; transition: transform .25s ease; }
 .xp-fig button.lb:hover img { transform: scale(1.03); }
-.xp-fig figcaption { font-size: 12px; color: var(--text-faint); margin-top: 6px; }
+.xp-fig figcaption { font-size: 11.5px; color: var(--text-faint); margin-top: 5px; }
+.xp-card .chips { clear: both; }
 .xp-head { display: flex; gap: 14px; align-items: flex-start; }
 .xp-titles h3 { margin: 0; font-size: 16px; font-weight: 650; }
 .xp-org { color: var(--text-soft); font-size: 13.5px; margin-top: 2px; }
@@ -438,8 +439,7 @@ button.lb { background: none; border: 0; padding: 0; }
   .nav-links { display: none; }
   .wwdc-strip { grid-template-columns: 1fr 1fr; }
   .wwdc-tile img { height: 150px; }
-  .xp-card.has-photo { grid-template-columns: 1fr; }
-  .xp-fig { max-width: 300px; margin: 4px auto 0; }
+  .xp-fig { float: none; width: min(260px, 82%); margin: 10px auto 2px; }
   .reel-card img { height: 190px; }
 }
 @media (max-width: 560px) {

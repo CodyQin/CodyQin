@@ -144,7 +144,7 @@
 
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const speed = 0.5; // px per frame (~30px/s)
-  let setW = 0, x = 0, paused = false, dragging = false;
+  let setW = 0, x = 0, paused = false, dragging = false, captured = false;
   let startX = 0, startOffset = 0, moved = 0;
 
   const measure = () => {
@@ -183,15 +183,20 @@
   reel.addEventListener("mouseleave", () => { paused = false; });
 
   track.addEventListener("pointerdown", (e) => {
-    dragging = true; moved = 0;
+    dragging = true; captured = false; moved = 0;
     startX = e.clientX; startOffset = x;
     track.classList.add("dragging");
-    try { track.setPointerCapture(e.pointerId); } catch (_) {}
   });
   track.addEventListener("pointermove", (e) => {
     if (!dragging) return;
     const dx = e.clientX - startX;
     moved = Math.max(moved, Math.abs(dx));
+    // capture only once this is clearly a drag — capturing at pointerdown
+    // would retarget the click to the track and break lightbox opening
+    if (moved > 6 && !captured) {
+      captured = true;
+      try { track.setPointerCapture(e.pointerId); } catch (_) {}
+    }
     x = wrap(startOffset + dx);
     render();
   });
@@ -199,7 +204,10 @@
     if (!dragging) return;
     dragging = false;
     track.classList.remove("dragging");
-    try { track.releasePointerCapture(e.pointerId); } catch (_) {}
+    if (captured) {
+      try { track.releasePointerCapture(e.pointerId); } catch (_) {}
+      captured = false;
+    }
   };
   track.addEventListener("pointerup", endDrag);
   track.addEventListener("pointercancel", endDrag);
