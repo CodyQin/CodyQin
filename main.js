@@ -221,3 +221,86 @@
     }
   }, true);
 })();
+
+// Travel map tooltip: hovering / tapping / focusing a visited country shows its name.
+// Delegates on the SVG — pointerover/out bubble, unlike pointerenter/leave.
+(function () {
+  const svg = document.querySelector(".world-map");
+  if (!svg) return;
+  const tip = document.createElement("div");
+  tip.className = "map-tip";
+  tip.setAttribute("role", "tooltip");
+  tip.hidden = true;
+  document.body.appendChild(tip);
+
+  const move = (e) => {
+    let x = e.clientX + 14;
+    let y = e.clientY - tip.offsetHeight - 12;
+    if (x + tip.offsetWidth > window.innerWidth - 8) x = e.clientX - tip.offsetWidth - 14;
+    if (y < 8) y = e.clientY + 18;
+    tip.style.left = x + "px";
+    tip.style.top = y + "px";
+  };
+  const show = (path, e) => {
+    tip.textContent = path.getAttribute("data-name");
+    // the native <title> is the no-JS fallback; drop it so both never show at once
+    const t = path.querySelector("title");
+    if (t) t.remove();
+    if (e) move(e);
+    else {
+      const r = path.getBoundingClientRect(); // keyboard focus: above the shape
+      tip.style.left = Math.min(Math.max(8, r.left + r.width / 2 - 30), window.innerWidth - 60) + "px";
+      tip.style.top = Math.max(8, r.top - 30) + "px";
+    }
+    tip.hidden = false;
+  };
+
+  svg.addEventListener("pointerover", (e) => {
+    const p = e.target.closest("[data-name]");
+    if (p) show(p, e);
+  });
+  svg.addEventListener("pointermove", (e) => {
+    if (!tip.hidden) move(e);
+  });
+  svg.addEventListener("pointerout", (e) => {
+    // touch lift fires pointerout immediately — let the click path own touch
+    if (e.pointerType !== "touch" && e.target.closest("[data-name]")) tip.hidden = true;
+  });
+  svg.addEventListener("click", (e) => {
+    const p = e.target.closest("[data-name]");
+    if (p) {
+      show(p, e);
+      e.stopPropagation();
+    }
+  });
+  document.addEventListener("click", () => {
+    tip.hidden = true;
+  });
+  svg.addEventListener("focusin", (e) => {
+    const p = e.target.closest("[data-name]");
+    if (p) show(p, null);
+  });
+  svg.addEventListener("focusout", () => {
+    tip.hidden = true;
+  });
+})();
+
+// busuanzi page views: reveal the footer line once a value lands, even if the
+// official script's own container handling never fires (or it is ad-blocked).
+(function () {
+  const val = document.getElementById("busuanzi_value_site_pv");
+  const box = document.getElementById("busuanzi_container_site_pv");
+  if (!val || !box) return;
+  const show = () => {
+    if (val.textContent.trim()) box.classList.add("pv-on");
+  };
+  if (val.textContent.trim()) {
+    show();
+    return;
+  }
+  const mo = new MutationObserver(() => {
+    show();
+    if (val.textContent.trim()) mo.disconnect();
+  });
+  mo.observe(val, { childList: true, characterData: true, subtree: true });
+})();
