@@ -285,14 +285,14 @@
   });
 })();
 
-// busuanzi page views: reveal the footer line once a value lands, even if the
-// official script's own container handling never fires (or it is ad-blocked).
+// busuanzi page views: reveal the sidebar pill once a value lands. The pill
+// (not the inner span) is gated so ad-block or a dead service = no empty pill.
 (function () {
   const val = document.getElementById("busuanzi_value_site_pv");
-  const box = document.getElementById("busuanzi_container_site_pv");
-  if (!val || !box) return;
+  const pill = document.querySelector(".side-pv");
+  if (!val || !pill) return;
   const show = () => {
-    if (val.textContent.trim()) box.classList.add("pv-on");
+    if (val.textContent.trim()) pill.classList.add("pv-on");
   };
   if (val.textContent.trim()) {
     show();

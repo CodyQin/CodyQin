@@ -29,6 +29,7 @@ VISITED = {  # insertion order = stagger order (--i); values = display names
     "392": "Japan",
     "702": "Singapore",
     "764": "Thailand",
+    "360": "Indonesia",
     "840": "United States",
     "250": "France",
     "380": "Italy",
@@ -37,6 +38,49 @@ VISITED = {  # insertion order = stagger order (--i); values = display names
     "756": "Switzerland",
 }
 MARKERS = {"702": (103.8198, 1.3521)}  # visited ids with no 110m polygon -> lon/lat dot
+RING_KEEP = {"250": -10.0}  # France: keep rings with centroid lon >= -10 (drops French Guiana)
+CLUSTER_PX = 7.0  # merge city dots closer than this many px into one stop
+CITIES = [  # (display name, lon, lat) — China entries are provinces at their capitals
+    ("Beijing", 116.4074, 39.9042),
+    ("Shanghai", 121.4737, 31.2304),
+    ("Jiangsu", 118.7969, 32.0603),
+    ("Zhejiang", 120.1551, 30.2741),
+    ("Guangdong", 113.2644, 23.1291),
+    ("Guangxi", 108.3733, 22.9182),
+    ("Hong Kong", 114.1694, 22.3193),
+    ("Macau", 113.5491, 22.1987),
+    ("Taiwan", 121.5654, 25.0330),
+    ("Sichuan", 104.0657, 30.5723),
+    ("Chongqing", 106.5516, 29.5630),
+    ("Guizhou", 106.6302, 26.6477),
+    ("Yunnan", 102.8329, 24.8801),
+    ("Tibet", 91.1141, 29.6469),
+    ("Shaanxi", 108.9402, 34.3416),
+    ("Qinghai", 101.7782, 36.6171),
+    ("Ningxia", 106.2782, 38.4664),
+    ("Bangkok", 100.5018, 13.7563),
+    ("Chiang Mai", 98.9853, 18.7883),
+    ("Bali", 115.1889, -8.4095),
+    ("North Carolina", -78.6382, 35.7796),
+    ("New York", -74.0060, 40.7128),
+    ("Philadelphia", -75.1652, 39.9526),
+    ("Washington, DC", -77.0369, 38.9072),
+    ("Denver", -104.9903, 39.7392),
+    ("Los Angeles", -118.2437, 34.0522),
+    ("Honolulu", -157.8583, 21.3069),
+    ("Paris", 2.3522, 48.8566),
+    ("Berlin", 13.4050, 52.5200),
+    ("Milan", 9.1900, 45.4642),
+    ("Venice", 12.3155, 45.4408),
+    ("Rome", 12.4964, 41.9028),
+    ("Vatican City", 12.4534, 41.9029),
+    ("Osaka", 135.5191, 34.6937),
+    ("Kyoto", 135.7681, 35.0116),
+    ("Nara", 135.8048, 34.7855),
+    ("Uji", 135.7997, 34.8894),
+    ("Tokyo", 139.6917, 35.6895),
+    ("Kamakura", 139.5465, 35.2975),
+]
 A1, A2, A3, A4 = 1.340264, -0.081106, 0.000893, 0.003796
 RAD = math.pi / 180.0
 SQ3 = math.sqrt(3.0)
@@ -191,6 +235,9 @@ def main():
         pieces = []
         for ring in geometry_rings(g):
             pieces.extend(cut_antimeridian(ring_points(ring, arcs), name, cut_log))
+        if gid in RING_KEEP:
+            lo = RING_KEEP[gid]
+            pieces = [p for p in pieces if sum(pt[0] for pt in p) / len(p) >= lo]
         if pieces:
             countries.append((gid, name, pieces))
 
@@ -267,12 +314,50 @@ def main():
                 f'cx="{cx}" cy="{cy}" r="3.2"><title>{disp}</title></circle>'
             )
 
+    # city / region dots at world resolution — nearby stops merge into one
+    # dot whose tooltip lists every name (single-linkage on projected px)
+    stops = []
+    for name, lon, lat in CITIES:
+        x, y = project(lon, lat)
+        stops.append({"name": name, "x": (x - xmin) * k, "y": (y - ymin) * k, "taken": False})
+    clusters = []
+    for s in stops:
+        if s["taken"]:
+            continue
+        s["taken"] = True
+        grp = [s]
+        grew = True
+        while grew:
+            grew = False
+            for q in stops:
+                if q["taken"]:
+                    continue
+                if any((q["x"] - g["x"]) ** 2 + (q["y"] - g["y"]) ** 2 <= CLUSTER_PX ** 2 for g in grp):
+                    q["taken"] = True
+                    grp.append(q)
+                    grew = True
+        clusters.append(grp)
+    n_city = 0
+    for gi, grp in enumerate(clusters):
+        cx = sum(g["x"] for g in grp) / len(grp)
+        cy = sum(g["y"] for g in grp) / len(grp)
+        label = " · ".join(g["name"] for g in grp)
+        r = min(2.2 + 0.35 * (len(grp) - 1), 4.0)
+        i = min(11 + gi, 14)  # stagger continues after countries, capped
+        lines.append(
+            f'          <circle class="m-city" style="--i:{i}" data-name="{label}" tabindex="0" '
+            f'cx="{num(cx, args.prec)}" cy="{num(cy, args.prec)}" r="{r:.1f}"><title>{label}</title></circle>'
+        )
+        n_city += 1
+
     visited_list = list(VISITED.values())
     aria = (
         f"World map highlighting the {len(visited_list)} countries I have visited: "
         + ", ".join(visited_list[:-1])
         + f", and {visited_list[-1]}."
-    ).replace(", and United States.", ", and the United States.")
+    ).replace(", and United States.", ", and the United States.") + (
+        " Ringed dots mark individual cities and regions." if CITIES else ""
+    )
     inner = "\n".join(lines)
     svg = (
         f'<svg class="world-map" viewBox="0 0 {num(args.width, 0)} {height}" role="img" aria-label="{aria}">\n'
@@ -288,7 +373,7 @@ def main():
     standalone.write_text(
         svg.replace("<svg ", '<svg xmlns="http://www.w3.org/2000/svg" ', 1).replace(
             ">\n",
-            '><style>.m-land{fill:#d8d5d1;stroke:#bfbcb8;stroke-width:.5}.m-visited{fill:#2563eb}.m-dot{stroke:#fff}</style>\n',
+            '><style>.m-land{fill:#d8d5d1;stroke:#bfbcb8;stroke-width:.5}.m-visited{fill:#2563eb}.m-dot{stroke:#fff}.m-city{fill:#fff;stroke:#2563eb;stroke-width:1.4}</style>\n',
             1,
         )
         + "\n",
@@ -304,7 +389,8 @@ def main():
 
     n = sum(1 for l in lines if "<path" in l)
     print(
-        f"{n} country paths (+{len(lines) - n} markers), {stats['rings']} rings kept, "
+        f"{n} country paths, {len(lines) - n - n_city} country markers, {n_city} city dots "
+        f"({len(CITIES)} stops merged), {stats['rings']} rings kept, "
         f"{stats['dropped']} sub-pixel rings dropped, {stats['pts']} vertices, "
         f"{total_cuts} antimeridian cuts; svg {len(svg)} bytes; "
         f"index.html now {len(new_html)} bytes (viewBox 0 0 {num(args.width, 0)} {height})"
