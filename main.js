@@ -291,16 +291,20 @@
   const val = document.getElementById("busuanzi_value_site_pv");
   const pill = document.querySelector(".side-pv");
   if (!val || !pill) return;
-  const show = () => {
-    if (val.textContent.trim()) pill.classList.add("pv-on");
+  const BASE = 800; // display base added to the raw count
+  let done = false;
+  const render = () => {
+    if (done) return;
+    const n = parseInt(val.textContent.replace(/[^\d]/g, ""), 10);
+    if (!Number.isFinite(n)) return;
+    done = true;
+    val.textContent = String(n + BASE);
+    pill.classList.add("pv-on");
   };
   if (val.textContent.trim()) {
-    show();
+    render();
     return;
   }
-  const mo = new MutationObserver(() => {
-    show();
-    if (val.textContent.trim()) mo.disconnect();
-  });
+  const mo = new MutationObserver(render);
   mo.observe(val, { childList: true, characterData: true, subtree: true });
 })();
