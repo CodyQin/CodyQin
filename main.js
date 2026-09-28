@@ -132,6 +132,13 @@
 (function () {
   const reel = document.getElementById("lifeReel");
   if (!reel) return;
+  // Touch / small screens: skip the JS marquee — its set-width measuring races
+  // the lazy-loaded images there and can pile the cards up. The strip becomes
+  // a native horizontal scroller instead (see .reel-native in style.css).
+  if (window.matchMedia("(hover: none), (max-width: 720px)").matches) {
+    reel.classList.add("reel-native");
+    return;
+  }
   const track = reel.querySelector(".reel-track");
   const set = reel.querySelector(".reel-set");
   if (!track || !set) return;

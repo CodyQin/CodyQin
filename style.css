@@ -344,6 +344,15 @@ img { max-width: 100%; display: block; }
 .reel-cap strong { font-size: 12px; font-weight: 650; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .reel-cap em { font-size: 11px; font-weight: 400; color: rgba(255,255,255,.88); font-family: var(--font-display); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
+/* Phones: the filmstrip scrolls natively instead of running the JS marquee */
+.reel-native {
+  overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none;
+  -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory;
+}
+.reel-native::-webkit-scrollbar { display: none; }
+.reel-native .reel-track { touch-action: pan-x pan-y; }
+.reel-native .reel-card { scroll-snap-align: start; }
+
 /* ---- Lightbox ---- */
 button.lb, a.lb { cursor: zoom-in; }
 button.lb { background: none; border: 0; padding: 0; }
@@ -482,4 +491,7 @@ button.lb { background: none; border: 0; padding: 0; }
   .reel-cap em { display: none; }
   .reel-cap strong { font-size: 11.5px; }
   .lightbox figcaption { font-size: 12px; padding: 0 12px; }
+  .award-list li { flex-wrap: wrap; }
+  .award-name { flex: 1; }
+  .award-note { order: 1; flex-basis: 100%; margin-top: 3px; }
 }
