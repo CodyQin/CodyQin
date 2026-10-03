@@ -155,9 +155,8 @@
   let startX = 0, startOffset = 0, moved = 0;
 
   const measure = () => {
-    setW = set.getBoundingClientRect().width;
-    x = wrap(x);
-    render();
+    const w = set.getBoundingClientRect().width;
+    if (w > 1) { setW = w; x = wrap(x); render(); }
   };
   const wrap = (v) => {
     if (!setW) return v;
@@ -168,8 +167,15 @@
   const render = () => { track.style.transform = "translate3d(" + x + "px,0,0)"; };
 
   // x lives in (-setW, 0]: the duplicate set feeds in from the left as the
-  // track travels right, so the loop never shows an empty edge.
-  const init = () => { setW = set.getBoundingClientRect().width; x = -setW; render(); };
+  // track travels right, so the loop never shows an empty edge. A measured
+  // width of ~0 means the lazy images haven't loaded yet — keep the strip
+  // un-shifted and keep re-measuring instead of looping over a bogus window
+  // (the strip would drift right off-screen and the reel would go blank).
+  const init = () => {
+    const w = set.getBoundingClientRect().width;
+    if (w > 1) { setW = w; x = -setW; render(); }
+    else if (setW) { setW = 0; x = 0; track.style.transform = ""; }
+  };
   if (document.readyState === "complete") init();
   else window.addEventListener("load", init);
   set.querySelectorAll("img").forEach((im) => {
@@ -182,7 +188,10 @@
     document.documentElement.classList.contains("lb-open");
 
   (function tick() {
-    if (!blocked()) { x = wrap(x + speed); render(); }
+    if (!blocked()) {
+      if (setW > 1) { x = wrap(x + speed); render(); }
+      else init(); // width not usable yet (images still loading) — keep trying
+    }
     requestAnimationFrame(tick);
   })();
 
