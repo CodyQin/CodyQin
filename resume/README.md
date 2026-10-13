@@ -17,6 +17,11 @@ Source of truth for Chenshuhao (Cody) Qin's English resume (LaTeX, one page).
 
 ## Changelog
 
+### v2026.10 (2026-10-12)
+- Infra / data-platform pivot (born from ByteDance AML tailoring, promoted to master): new **Big Data & Lakehouse** skills line (Spark, Flink, Iceberg, Kafka, Ray); Infrastructure line adds Kubernetes Operator development; AI line adds CUDA GPU programming; C moved up in Languages
+- Alibaba bullets reworked: ADL Foundry (Apsara data-lake analytics platform) named in bullet 1; new lakehouse-integration bullet (Spark/Flink/Iceberg + Kafka streaming, raw data → analysis-ready datasets); Ray bullet adds hands-on K8s Operator development; context-control bullet reframed as agent-execution-trace analysis; title now "AI Engineer Intern (Agent Infrastructure)"
+- Header adds availability line (Summer 2027, May–Aug); Blueberry / Tsinghua / Leiting compressed to shorter paragraphs, all metrics retained
+
 ### v2026.08.6 (2026-08-29)
 - Header now includes personal website (codyqin.github.io/CodyQin) alongside GitHub/LinkedIn
 - "5 merged PRs" hyperlinked to the author-filtered PR list (data-juicer-agents)

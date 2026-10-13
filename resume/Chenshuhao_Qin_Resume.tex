@@ -1,8 +1,9 @@
 %-------------------------
 % Resume in Latex
 % Author : Chenshuhao Qin
-% v2026.08 — Added Alibaba Cloud (Tongyi Lab) & Blueberry AI; cut ABC; paragraph-style compressed entries; strict one page
-% Adapted for VMock Optimization
+% v2026.10 — Infra/data-platform pivot of v2026.08: Big Data & Lakehouse skills line,
+%           Spark/Flink/Iceberg/Kafka + ADL Foundry + K8s Operator bullets at Alibaba,
+%           trace-analysis framing, CUDA, availability line in header
 %------------------------
 
 \documentclass[letterpaper,10pt]{article}
@@ -100,7 +101,9 @@
     \href{mailto:chenshuh@usc.edu}{\underline{chenshuh@usc.edu}} $|$
     \href{https://codyqin.github.io/CodyQin/}{\underline{codyqin.github.io/CodyQin}} $|$
     \href{https://github.com/CodyQin}{\underline{github.com/CodyQin}} $|$
-    \href{https://www.linkedin.com/in/chenshuhao-qin/}{\underline{linkedin.com/in/chenshuhao-qin}}
+    \href{https://www.linkedin.com/in/chenshuhao-qin/}{\underline{linkedin.com/in/chenshuhao-qin}} \\
+    \vspace{2pt}
+    \textbf{Availability}: Summer 2027 internship, May -- Aug. 2027
 \end{flushleft}
 
 %-----------EDUCATION-----------
@@ -124,10 +127,11 @@
 \section{Skills}
  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt, topsep=1pt, parsep=0pt]
     \small{\item{
-     \textbf{Languages}{: Python, TypeScript/JavaScript, Java, SQL, Swift, C} \\
-     \textbf{AI \& Machine Learning}{: PyTorch, TensorFlow, LoRA Fine-tuning, Prompt Engineering, Hugging Face, Pandas, NumPy} \\
-     \textbf{LLM \& Agents}{: LLM Agents (AgentScope, LangChain, LlamaIndex), Agent Harness \& Context Engineering, Retrieval-Augmented Generation (RAG), Model Serving (vLLM), Vector Search (Milvus)} \\
-     \textbf{Infrastructure \& Distributed Systems}{: Ray, Kubernetes, Docker, MySQL, PostgreSQL, Redis, REST APIs (FastAPI, Flask), React, Linux, Git, CI/CD, Object Storage (OSS/S3), AWS, PyTest}
+     \textbf{Languages}{: Python, C, Java, SQL, TypeScript/JavaScript, Swift} \\
+     \textbf{Big Data \& Lakehouse}{: Apache Spark, Flink, Iceberg, Kafka, Ray, batch \& streaming pipelines, object storage (OSS/S3)} \\
+     \textbf{Infrastructure \& Cloud}{: Kubernetes (incl. Operator development), Docker, Linux, Git, CI/CD, MySQL, PostgreSQL, Redis, REST APIs (FastAPI, Flask), React, AWS} \\
+     \textbf{AI \& Machine Learning}{: PyTorch, TensorFlow, CUDA GPU programming, LoRA fine-tuning, vLLM, Hugging Face, Pandas, NumPy} \\
+     \textbf{LLM \& Agents}{: agent harness \& context engineering, retrieval-augmented generation (RAG), LangChain, LlamaIndex, AgentScope, Milvus vector search}
     }}
  \end{itemize}
 
@@ -137,29 +141,29 @@
 
     \resumeSubheading
       {Alibaba Cloud (Top-4 Global Cloud Provider)}{Hangzhou, China}
-      {AI Engineer Intern}{Jun. 2026 -- Aug. 2026}
+      {AI Engineer Intern (Agent Infrastructure)}{Jun. 2026 -- Aug. 2026}
       \resumeItemListStart
-        \resumeItem{Collaborated with Alibaba's \textbf{Tongyi Lab} to productize \textbf{Data-Juicer Agents} --- an open-source \textbf{agent harness} --- into natural-language-driven multimodal data pipelines (cleaning, filtering, deduplication) for the broader \textbf{Qwen} ecosystem, replacing script-heavy workflows on the Apsara Data Lake platform.}
-        \resumeItem{Built an agent-to-\textbf{Ray} distributed execution pipeline over private-cloud object storage (OSS) and Kubernetes --- \textbf{2,793 records, 16 operators, $\sim$5 minutes} --- and landed the core capability upstream through a merged PR.}
-        \resumeItem{Designed a three-layer context-control architecture (tool-output compaction, memory compression, hard token budgets) cutting single-tool context payloads by \textbf{82\%} and enabling stable multi-turn agents on 30k-token models.}
-        \resumeItem{Shipped a full-stack agent workspace (\textbf{React / FastAPI / MySQL}, REST APIs) with persistent sessions, execution tracing, conversation rollback, and multi-instance isolation; delivered \textbf{4 production container-image releases}.}
-        \resumeItem{Contributed \href{https://github.com/datajuicer/data-juicer-agents/pulls?q=is\string:pr+author\string:CodyQin}{\textbf{5 merged PRs}} (PyTest unit coverage, CI green) to the 7k$\star$ Data-Juicer open-source ecosystem across multimodal ingestion, distributed Ray execution, and context optimization; 1 enhancement proposal adopted by maintainers.}
+        \resumeItem{Collaborated with Alibaba's \textbf{Tongyi Lab} to productize \textbf{Data-Juicer Agents} --- an open-source \textbf{agent harness} --- into natural-language multimodal data pipelines (cleaning, filtering, deduplication) for the broader \textbf{Qwen} ecosystem, deployed on \textbf{ADL Foundry}, the team's Apsara data-lake analytics platform.}
+        \resumeItem{Built internal-platform integrations coupling \textbf{Spark}, \textbf{Flink}, and \textbf{Apache Iceberg} lakehouse engines with Data-Juicer Agents, driving \textbf{batch} and \textbf{Kafka}-backed \textbf{streaming} pipelines that turn raw multimodal data into analysis-ready datasets on \textbf{OSS} object storage.}
+        \resumeItem{Built an agent-to-\textbf{Ray} distributed execution pipeline over private-cloud object storage (OSS) and \textbf{Kubernetes}, with hands-on \textbf{Kubernetes Operator} development for job lifecycle automation --- \textbf{2,793 records, 16 operators, $\sim$5 minutes} --- landed upstream through a merged PR.}
+        \resumeItem{Analyzed \textbf{agent execution traces} to localize context bloat; designed a three-layer context-control architecture (tool-output compaction, memory compression, hard token budgets) cutting single-tool context payloads by \textbf{82\%} and stabilizing multi-turn agents on 30k-token models.}
+        \resumeItem{Shipped a full-stack agent workspace (\textbf{React / FastAPI / MySQL}) with persistent sessions, execution tracing, conversation rollback, and multi-instance isolation (\textbf{4 container-image releases}); contributed \href{https://github.com/datajuicer/data-juicer-agents/pulls?q=is\string:pr+author\string:CodyQin}{\textbf{5 merged PRs}} (unit-tested, CI green) to the 7k$\star$ Data-Juicer ecosystem, plus 1 proposal adopted by maintainers.}
       \resumeItemListEnd
 
     \resumeSubheading
       {Blueberry AI}{Burlingame, CA (Remote)}
       {AI Engineer Intern}{Nov. 2025 -- Jan. 2026}
-      \resumeParagraph{Built a \textbf{Milvus + MySQL} feature-extraction and auto-tagging pipeline batch-indexing \textbf{200K+ images} for landmark / IP / SKU retrieval; benchmarked \textbf{DINOv3, Qwen-VL, and BGE-VL} under a unified recall / precision / latency framework for private deployment; delivered a YOLO + \textbf{Milvus} vector search + Gradio retrieval POC validated for commercial use.}
+      \resumeParagraph{Built a \textbf{Milvus + MySQL} feature-extraction and auto-tagging pipeline batch-indexing \textbf{200K+ images} for landmark / IP / SKU retrieval; benchmarked \textbf{DINOv3, Qwen-VL, and BGE-VL} under a unified recall / precision / latency framework; delivered a YOLO + vector-search retrieval POC validated for commercial use.}
 
     \resumeSubheading
       {Tsinghua Sichuan Energy Internet Research Institute}{Chengdu, China}
       {Algorithm Engineer Intern}{Sep. 2025 -- Oct. 2025}
-      \resumeParagraph{Engineered a \textbf{DeepLabV3+ (PyTorch)} semantic-segmentation model for microgrid fault diagnosis reaching \textbf{92\% accuracy} across complex field scenarios; owned the full data lifecycle of \textbf{500+ annotated images} from preprocessing to deployment, anchoring winning bids for major energy-infrastructure projects.}
+      \resumeParagraph{Engineered a \textbf{DeepLabV3+ (PyTorch)} segmentation model for microgrid fault diagnosis reaching \textbf{92\% accuracy}; owned the full data lifecycle of \textbf{500+ images} from preprocessing to deployment, anchoring winning infrastructure bids.}
 
     \resumeSubheading
       {Leiting Games (G-bits)}{Shenzhen, China}
       {AI R\&D Intern (AIGC \& Automation)}{May. 2025 -- Aug. 2025}
-      \resumeParagraph{Fine-tuned \textbf{SDXL / Flux LoRA} models on \textbf{Kohya}, shipping 30+ ad assets (80\% adoption) that drove \textbf{117K+ installs} and \textbf{¥24.6M billings (196\% ROI)}; led a 5-person team scaling creative output \textbf{3$\times$} with 15--20\% higher material ROI; built a \textbf{98.85\%-accurate} RPA monitor catching 1,000+ private-server violations (2025 Best Practice).}
+      \resumeParagraph{Built a \textbf{Dify + RPA} automated monitoring pipeline (\textbf{98.85\% accuracy}, 1,000+ violations detected) and fine-tuned \textbf{SDXL / Flux LoRA} models driving \textbf{117K+ installs, ¥24.6M billings (196\% ROI)}; led a 5-person team to \textbf{3$\times$} creative output (2025 Best Practice).}
 
   \resumeSubHeadingListEnd
 
@@ -169,7 +173,7 @@
 
     \resumeProjectHeading
       {\textbf{ChatDKU --- RAG Campus Q\&A Assistant} $|$ \emph{Python, LlamaIndex, LangChain, Redis}}{Jul. 2024 -- May. 2025}
-      \resumeParagraph{Co-founded a university-adopted \textbf{Retrieval-Augmented Generation (RAG)} Q\&A agent indexing \textbf{12,000+ webpages} over a privately deployed LLM; implemented \textbf{Hybrid Search (BM25 + vectors)}, \textbf{HyDE}, multi-level \textbf{Redis} caching, and \textbf{SSO} web deployment; the system was officially deployed at DKU and recognized by multiple university offices, documented as a DKU Signature Work.}
+      \resumeParagraph{Co-founded a university-adopted \textbf{RAG} Q\&A agent indexing \textbf{12,000+ webpages} over a privately deployed LLM; implemented \textbf{hybrid search (BM25 + vectors)}, \textbf{HyDE}, multi-level \textbf{Redis} caching, and \textbf{SSO} web deployment; officially deployed at DKU and documented as a DKU Signature Work.}
 
   \resumeSubHeadingListEnd
 
