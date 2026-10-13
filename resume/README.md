@@ -17,6 +17,9 @@ Source of truth for Chenshuhao (Cody) Qin's English resume (LaTeX, one page).
 
 ## Changelog
 
+### v2026.10.1 (2026-10-13)
+- Removed the header availability line ("Summer 2027 internship, May–Aug 2027") — this is now the default portfolio resume; availability is stated per application instead
+
 ### v2026.10 (2026-10-12)
 - Infra / data-platform pivot (born from ByteDance AML tailoring, promoted to master): new **Big Data & Lakehouse** skills line (Spark, Flink, Iceberg, Kafka, Ray); Infrastructure line adds Kubernetes Operator development; AI line adds CUDA GPU programming; C moved up in Languages
 - Alibaba bullets reworked: ADL Foundry (Apsara data-lake analytics platform) named in bullet 1; new lakehouse-integration bullet (Spark/Flink/Iceberg + Kafka streaming, raw data → analysis-ready datasets); Ray bullet adds hands-on K8s Operator development; context-control bullet reframed as agent-execution-trace analysis; title now "AI Engineer Intern (Agent Infrastructure)"
