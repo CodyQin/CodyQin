@@ -17,6 +17,9 @@ Source of truth for Chenshuhao (Cody) Qin's English resume (LaTeX, one page).
 
 ## Changelog
 
+### v2026.10.2 (2026-10-27)
+- **Blueberry AI entry renamed for background-check accuracy**: "Blueberry AI / Burlingame, CA (Remote)" → **"Share Creators (Blueberry AI) / Remote (Chengdu, China)"** — entity-first name (Share Creators is the legal company; Blueberry AI is its product), truthful location for third-party employment verification (title/dates unchanged: Nov 2025 – Jan 2026, matches offer notification letter)
+
 ### v2026.10.1 (2026-10-13)
 - Removed the header availability line ("Summer 2027 internship, May–Aug 2027") — this is now the default portfolio resume; availability is stated per application instead
 
