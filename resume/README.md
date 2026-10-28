@@ -17,6 +17,9 @@ Source of truth for Chenshuhao (Cody) Qin's English resume (LaTeX, one page).
 
 ## Changelog
 
+### v2026.10.3 (2026-10-27)
+- **Reverted v2026.10.2 by decision: dual-track resumes.** Official/public resume keeps the established **"Blueberry AI / Burlingame, CA (Remote)"** branding. A separate background-check-only variant (Share Creators (Blueberry AI), Chengdu, China, Software Development Intern — matching the Chinese offer notification letter) lives outside this public repo and is used solely for TikTok USDS employment verification
+
 ### v2026.10.2 (2026-10-27)
 - **Blueberry AI entry renamed for background-check accuracy**: "Blueberry AI / Burlingame, CA (Remote)" → **"Share Creators (Blueberry AI) / Remote (Chengdu, China)"** — entity-first name (Share Creators is the legal company; Blueberry AI is its product), truthful location for third-party employment verification (title/dates unchanged: Nov 2025 – Jan 2026, matches offer notification letter)
 
